@@ -1,0 +1,44 @@
+.carrocelContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrocelTitle{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.carrocelContent {
+    height: 250px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.carrocelContent .carrocelContent-botaoProximo {
+    height: 100%;
+    width: 100px;
+    background-color: gray;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.carrocelContent .carrocelContent-containerHolder {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carrocelContent .carrocelContent-containerHolder-vitrini {
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    padding: 0 300px;
+}
