@@ -30,8 +30,8 @@ export default function Card({
         <div className={stylesCard.card_pontuacao}>
           <img src={iconeEstrela} />
           <span>{pontuacao}</span>
-          <span>
-            (<a>Reviews</a>)
+          <span className={stylesCard.reviews}>
+            (Reviews)
           </span>
         </div>
         <div className={stylesCard.card_options}>
