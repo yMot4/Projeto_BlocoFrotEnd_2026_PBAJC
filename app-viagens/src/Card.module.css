@@ -6,6 +6,7 @@
   top: 595px;
   left: 25px;
   background: #d6e6da;
+  display: flex;
 }
 
 .card_image {
@@ -30,5 +31,65 @@
   border-radius: 32px;
   opacity: 1;
   top: 595px;
-  left: 25px;  
+  left: 25px;
+}
+
+.card_info {
+  width: 220.5px;
+  height: 134px;
+  margin-top: 19px;
+}
+
+.card_titulo {
+  display: flex;
+  justify-content: left;
+  width: 210.54px;
+  height: 26px;
+  opacity: 1;
+  margin-left: 10.21px;
+}
+
+.titulo {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #000000;
+}
+
+.card_subtitle {
+  width: 180px;
+  height: 17px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.card_subtitle > img {
+  height: 17px;
+  width: 17px;
+  margin-left: 9.75px;
+}
+
+.card_subtitle > p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.card_pontuacao {
+  width: 180px;
+  height: 17px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.card_pontuacao > img{
+    width: 17px;
+    height: 17px;
+    
 }
