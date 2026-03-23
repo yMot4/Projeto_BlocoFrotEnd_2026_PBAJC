@@ -8,7 +8,7 @@ import Card from "./Card";
 function App() {
   return (
     <>
-      <Card imagem="Munique.jpg" />
+      <Card imagem="Munique.jpg" titulo="Munique, Alemanha" />
     </>
   );
 }
