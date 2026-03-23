@@ -8,6 +8,8 @@ export default function Card({
   iconeEstrela,
   pontuacao,
   iconeAdicionar,
+  iconeCar,
+  iconePlaca,
   valor,
 }) {
   return (
@@ -35,11 +37,13 @@ export default function Card({
           </span>
         </div>
         <div className={stylesCard.card_options}>
-          <a>{iconeAdicionar}</a>
-          <i></i>
-          <i></i>
+          <img src={iconeAdicionar} />
+          <img src={iconeCar}/>
+          <img src={iconePlaca}/>
         </div>
-        <div className={stylesCard.card_valor}>{valor}</div>
+        <div className={stylesCard.card_valor}>
+            <span>{valor}</span>
+        </div>
       </div>
     </div>
   );
