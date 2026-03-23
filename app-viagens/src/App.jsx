@@ -8,7 +8,14 @@ import Card from "./Card";
 function App() {
   return (
     <>
-      <Card imagem="Munique.jpg" titulo="Munique, Alemanha" />
+      <Card
+        imagem="Munique.jpg"
+        titulo="Munique, Alemanha"
+        iconePredio="icone-hotel.png"
+        subtitulo="Munich Marriott Hotel"
+        iconeEstrela={"icone-estrela.png"}
+        pontuacao={4.8}
+      />
     </>
   );
 }
