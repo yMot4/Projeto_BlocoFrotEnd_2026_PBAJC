@@ -110,3 +110,30 @@
     text-decoration-thickness: 0%;
     text-decoration-skip-ink: True;
 }
+
+.card_options{
+    width:100px;
+    height: 17px;
+    display: flex;
+    gap: 8px;
+    margin-left: 9.75px; 
+    margin-top: 4px;   
+}
+
+.card_valor{
+    width: 210.54px;
+    height: 21px;
+    margin-top: 4px;
+    margin-left: 9.75px;   
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card_valor > span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color:#000000;
+}

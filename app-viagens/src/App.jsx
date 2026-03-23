@@ -15,6 +15,10 @@ function App() {
         subtitulo="Munich Marriott Hotel"
         iconeEstrela={"icone-estrela.png"}
         pontuacao={4.8}
+        iconeAdicionar={"icone-plus.png"}
+        iconeCar={"icone-car.png"}
+        iconePlaca={"icone-placa.png"}
+        valor={"R$2.458"}
       />
     </>
   );
