@@ -1,0 +1,132 @@
+.card_container {
+  width: 342px;
+  height: 134px;
+  border-radius: 32px;
+  opacity: 1;
+  top: 595px;
+  left: 25px;
+  background: #d6e6da;
+  display: flex;
+}
+
+.card_image {
+  width: 121.5px;
+  height: 134px;
+  border-radius: 32px;
+  opacity: 1;
+  top: 595px;
+  left: 25px;
+}
+
+.image {  
+  width: 121.5px;
+  height: 134px;
+  border-radius: 32px;
+  opacity: 1;
+  top: 595px;
+  left: 25px;
+}
+
+.card_info {
+  width: 220.5px;
+  height: 134px;
+  margin-top: 19px;
+}
+
+.card_titulo {
+  display: flex;
+  justify-content: left;
+  width: 210.54px;
+  height: 26px;
+  opacity: 1;
+  margin-left: 10.21px;
+}
+
+.titulo {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #000000;
+}
+
+.card_subtitle {
+  width: 180px;
+  height: 17px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.card_subtitle > img {
+  height: 17px;
+  width: 17px;
+  margin-left: 9.75px;
+}
+
+.card_subtitle > p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.card_pontuacao {
+  width: 180px;
+  height: 17px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.card_pontuacao > img{
+    width: 17px;
+    height: 17px;
+    margin-left: 9.75px;
+}
+
+.card_pontuacao > span{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.reviews{
+    text-decoration: underline;
+    text-decoration-style: solid;
+    offset: 0%;
+    text-decoration-thickness: 0%;
+    text-decoration-skip-ink: True;
+}
+
+.card_options{
+    width:100px;
+    height: 17px;
+    display: flex;
+    gap: 8px;
+    margin-left: 9.75px; 
+    margin-top: 4px;   
+}
+
+.card_valor{
+    width: 210.54px;
+    height: 21px;
+    margin-top: 4px;
+    margin-left: 9.75px;   
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card_valor > span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color:#000000;
+}
