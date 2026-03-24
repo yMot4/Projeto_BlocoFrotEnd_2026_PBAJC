@@ -1,6 +1,8 @@
 import stylesCard from "./Card.module.css";
 
 export default function Card({
+  idCarrocel,
+  numeroCard,
   imagem,
   titulo,
   iconePredio,
@@ -12,8 +14,11 @@ export default function Card({
   iconePlaca,
   valor,
 }) {
+const idDoCard = `carrocel-${idCarrocel}-card-${numeroCard}`;
+
+
   return (
-    <div className={stylesCard.card_container}>
+    <div id={idDoCard} className={stylesCard.card_container}>
       <div className={stylesCard.card_image}>
         <img
           src={imagem}
