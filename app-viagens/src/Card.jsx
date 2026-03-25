@@ -21,28 +21,30 @@ export default function Card({
           className={stylesCard.image}
         />
       </div>
-      <div className={stylesCard.card_info}> 
-        <div className={stylesCard.card_titulo}> 
+      <div className={stylesCard.card_info}>
+        <div className={stylesCard.card_titulo}>
           <span className={stylesCard.titulo}>{titulo}</span>
-        </div> 
+        </div>
         <div className={stylesCard.card_subtitle}>
-          <img src={iconePredio} alt="Ícone de hotel"/>
+          <img src={iconePredio} alt="Ícone de hotel" />
           <p>{subtitulo}</p>
         </div>
         <div className={stylesCard.card_pontuacao}>
           <img src={iconeEstrela} />
           <span>{pontuacao}</span>
-          <span className={stylesCard.reviews}>
-            (Reviews)
-          </span>
+          <span className={stylesCard.reviews}>(Reviews)</span>
         </div>
         <div className={stylesCard.card_options}>
-          <img src={iconeAdicionar} />
-          <img src={iconeCar}/>
-          <img src={iconePlaca}/>
+          <div className={stylesCard.card_icone}>
+            <img src={iconeAdicionar} />
+          </div>
+          <div className={stylesCard.card_icone}>
+            <img src={iconeCar} />
+            <img src={iconePlaca} />
+          </div>
         </div>
         <div className={stylesCard.card_valor}>
-            <span>{valor}</span>
+          <span>{valor}</span>
         </div>
       </div>
     </div>

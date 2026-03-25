@@ -18,7 +18,7 @@
   left: 25px;
 }
 
-.image {  
+.image {
   width: 121.5px;
   height: 134px;
   border-radius: 32px;
@@ -82,51 +82,56 @@
   margin-top: 6px;
 }
 
-.card_pontuacao > img{
-    width: 17px;
-    height: 17px;
-    margin-left: 9.75px;
+.card_pontuacao > img {
+  width: 17px;
+  height: 17px;
+  margin-left: 9.75px;
 }
 
-.card_pontuacao > span{
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 0%;
-    vertical-align: middle;
+.card_pontuacao > span {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 
-.reviews{
-    text-decoration: underline;
-    text-decoration-style: solid;
-    offset: 0%;
-    text-decoration-thickness: 0%;
-    text-decoration-skip-ink: True;
+.reviews {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  offset: 0%;
+  text-decoration-thickness: 0%;
+  text-decoration-skip-ink: True;
 }
 
-.card_options{
-    width:100px;
-    height: 17px;
-    display: flex;
-    gap: 8px;
-    margin-left: 9.75px; 
-    margin-top: 4px;   
+.card_options {
+  width: 100px;
+  height: 17px;
+  display: flex;
+  gap: 6px;
+  margin-left: 9.75px;
+  margin-top: 4px;
 }
 
-.card_valor{
-    width: 210.54px;
-    height: 21px;
-    margin-top: 4px;
-    margin-left: 9.75px;   
-    display: flex;
-    justify-content: flex-start;
+.card_icone > img {
+  width: 17px;
+  height: 17px;
 }
 
-.card_valor > span{
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    color:#000000;
+.card_valor {
+  width: 210.54px;
+  height: 21px;
+  margin-top: 4px;
+  margin-left: 9.75px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card_valor > span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #000000;
 }
