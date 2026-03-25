@@ -1,14 +1,10 @@
-import "./styles/main_page.css"
-
+import Home from "./pages/home/main_page"
 function App() {
   return (
     <>
-      <div className="tela">
-        <div className="foto_background"></div>
-        <div className="painel_verde"></div>
-      </div>
+      <Home />
     </>
-  )
+  );
 }
 
 export default App
