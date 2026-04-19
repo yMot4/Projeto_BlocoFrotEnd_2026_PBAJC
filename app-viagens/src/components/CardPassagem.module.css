@@ -1,0 +1,47 @@
+.container {
+  width: 342px;
+  height: 166px;
+}
+
+.card_lateral {
+  width: 35.45px;
+  height: 166px;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: greenyellow;
+}
+
+.div_aviao {
+  width: 15.97px;
+  height: 15.97px;
+  border-radius: 50%;
+  background: lightgray;
+}
+
+.div_aviao > img {
+  width: 15.97px;
+  height: 15.97px;
+  transform: rotate(-270deg);
+}
+
+.card_lat_titulo {
+  text-transform: uppercase;
+  width: 8.53px;
+  height: 91.67px;
+}
+
+.card_lat_titulo > span {
+  display: flex;
+  transform: rotate(-90deg);
+  justify-content: flex-end;
+  color: #667312;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
