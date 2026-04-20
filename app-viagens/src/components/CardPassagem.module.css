@@ -99,10 +99,40 @@
   font-size: 16px;
 }
 
-/* .div_valor {
-  height: 48px;
+.infoIda,
+.infoVolta {
+  width: 307px;
+  height: 40.5px;
+  top: 20px;
+  display: flex;
+  /* flex-grow: 1;*/
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  gap: 8px;
+  background-color: aquamarine;
+}
+
+.partidaIda,
+.partidaVolta,
+.chegadaIda,
+.chegadaVolta {
+  display: flex;
+  flex-direction: column;
+}
+
+.chegadaIda,
+.chegadaVolta {
+  justify-content: end;
+}
+
+.divIconeIda,
+.divIconeVolta {
+  width: 40px;
+  height: 27px;
+  background-color: lightgrey;
+  border-radius: 45px;
   display: flex;
   align-items: center;
-  font-weight: 700;
-  font-size: 16px;
-} */
+  justify-content: center;
+}
