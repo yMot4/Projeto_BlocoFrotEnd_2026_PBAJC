@@ -1,6 +1,22 @@
 import styleCardPass from "./CardPassagem.module.css";
 
-export default function CardPassagem({ ciaAerea, paradas, valor }) {
+export default function CardPassagem({
+  ciaAerea,
+  horaPartidaIda,
+  aeroPartidaIda,
+  dataPartidaIda,
+  horaChegadaIda,
+  aeroChegadaIda,
+  dataChegadaIda,
+  horaPartidaVolta,
+  aeroPartidaVolta,
+  dataPartidaVolta,
+  horaChegadaVolta,
+  aeroChegadaVolta,
+  dataChegadaVolta,
+  paradas,
+  valor,
+}) {
   return (
     <div className={styleCardPass.container}>
       <section className={styleCardPass.card_lateral}>
@@ -18,16 +34,17 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
           </svg>
         </div>
         <div className={styleCardPass.card_lat_titulo}>
-          {/* <span>{ciaAerea}</span> */}
-          <span>Airline</span>
+          <span>{ciaAerea}</span>
         </div>
       </section>
       <div className={styleCardPass.div_info}>
         <section className={styleCardPass.div_central}>
           <div className={styleCardPass.infoIda}>
             <div className={styleCardPass.partidaIda}>
-              <span className={styleCardPass.horario}>5h45</span>
-              <span className={styleCardPass.data}>GIG · 16 de mai.</span>
+              <span className={styleCardPass.horario}>{horaPartidaIda}</span>
+              <span className={styleCardPass.data}>
+                {aeroPartidaIda} · {dataPartidaIda}
+              </span>
             </div>
             <div className={styleCardPass.divIconeIda}>
               <svg
@@ -45,14 +62,18 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
               </svg>
             </div>
             <div className={styleCardPass.chegadaIda}>
-              <span className={styleCardPass.horario}>7h00</span>
-              <span className={styleCardPass.data}>GRU · 16 de mai.</span>
+              <span className={styleCardPass.horario}>{horaChegadaIda}</span>
+              <span className={styleCardPass.data}>
+                {aeroChegadaIda} · {dataChegadaIda}
+              </span>
             </div>
           </div>
           <div className={styleCardPass.infoVolta}>
             <div className={styleCardPass.partidaVolta}>
-              <span className={styleCardPass.horario}>23h20</span>
-              <span className={styleCardPass.data}>GRU · 23 de mai.</span>
+              <span className={styleCardPass.horario}>{horaPartidaVolta}</span>
+              <span className={styleCardPass.data}>
+                {aeroPartidaVolta} · {dataPartidaVolta}
+              </span>
             </div>
             <div className={styleCardPass.divIconeVolta}>
               <svg
@@ -70,8 +91,10 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
               </svg>
             </div>
             <div className={styleCardPass.chegadaVolta}>
-              <span className={styleCardPass.horario}>0h25</span>
-              <span className={styleCardPass.data}>GIG · 23 de mai.</span>
+              <span className={styleCardPass.horario}>{horaChegadaVolta}</span>
+              <span className={styleCardPass.data}>
+                {aeroChegadaVolta} · {dataChegadaVolta}
+              </span>
             </div>
           </div>
         </section>
@@ -82,13 +105,11 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
           </div>
           <div className={styleCardPass.div_paradas}>
             <span style={{ display: "inline", width: "auto" }}>
-              {/* {paradas} Parada(s) */}
-              1 Parada
+              {paradas} Parada
             </span>
           </div>
           <div className={styleCardPass.div_valor}>
-            {/* <span style={{ display: "inline", width: "auto" }}>R${valor}</span> */}
-            <span style={{ display: "inline", width: "auto", }}>R$483</span>
+            <span style={{ display: "inline", width: "auto" }}>R${valor}</span>
           </div>
         </section>
       </div>
