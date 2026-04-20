@@ -1,6 +1,10 @@
 .container {
   width: 342px;
   height: 166px;
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid black; */
+  border-radius: 8px;
 }
 
 .card_lateral {
@@ -12,20 +16,22 @@
   align-items: center;
   justify-content: center;
   background-color: greenyellow;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .div_aviao {
   width: 15.97px;
   height: 15.97px;
   border-radius: 50%;
-  background: lightgray;
+  background: black;
 }
 
-.div_aviao > img {
+/* .div_aviao > img {
   width: 15.97px;
   height: 15.97px;
   transform: rotate(-270deg);
-}
+} */
 
 .card_lat_titulo {
   text-transform: uppercase;
@@ -45,3 +51,58 @@
   letter-spacing: 0%;
   vertical-align: middle;
 }
+
+.div_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.div_central {
+  width: 307px;
+  height: 118px;
+  /* background-color: orange; */
+  border-top-right-radius: 8px;
+}
+
+.div_detalhes {
+  width: 307px;
+  height: 48px;
+  /* left: 35.45px;
+  bottom: 0; */
+  background-color: yellow;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.div_bagagens {
+  width: 66px;
+  height: 48px;
+  display: flex;
+  gap: 2px;
+  /* left: 40px; */
+  align-items: center;
+}
+
+.div_bagagens > img {
+  width: 32px;
+  height: 32px;
+}
+
+.div_paradas,
+.div_valor {
+  display: flex;
+  width: 66px;
+  height: 48px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* .div_valor {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+} */
