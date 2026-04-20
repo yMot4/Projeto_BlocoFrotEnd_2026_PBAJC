@@ -1,6 +1,6 @@
 import styleCardPass from "./CardPassagem.module.css";
 
-export default function CardPassagem({ paradas, valor }) {
+export default function CardPassagem({ ciaAerea, paradas, valor }) {
   return (
     <div className={styleCardPass.container}>
       <section className={styleCardPass.card_lateral}>
@@ -19,7 +19,7 @@ export default function CardPassagem({ paradas, valor }) {
           </svg>
         </div>
         <div className={styleCardPass.card_lat_titulo}>
-          <span>Airlines</span>
+          <span>{ciaAerea}</span>
         </div>
       </section>
       <div className={styleCardPass.div_info}>
