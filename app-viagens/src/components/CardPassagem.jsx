@@ -5,7 +5,6 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
     <div className={styleCardPass.container}>
       <section className={styleCardPass.card_lateral}>
         <div className={styleCardPass.div_aviao}>
-          {/* <img src="/plane.svg" alt="Icone de avião" /> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15.97"
@@ -23,7 +22,60 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
         </div>
       </section>
       <div className={styleCardPass.div_info}>
-        <section className={styleCardPass.div_central}></section>
+        <section className={styleCardPass.div_central}>
+          <div className={styleCardPass.infoIda}>
+            <div className={styleCardPass.partidaIda}>
+              <span className={styleCardPass.horario}>5h45</span>
+              <span className={styleCardPass.data}>GIG · 16 de mai.</span>
+            </div>
+            <div className={styleCardPass.divIconeIda}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15.97"
+                height="15.97"
+                fill="black"
+                stroke="black"
+                viewBox="0 0 24 24"
+                style={{
+                  transform: "rotate(-270deg)",
+                }}
+              >
+                {/*<!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->*/}
+                <path d="M2.42 15.82c.27.19.61.23.91.12l5.66-2.02v2.11l-2.64 2.2c-.23.19-.36.47-.36.77v2a1 1 0 0 0 1.37.93l4.63-1.85 4.63 1.85a1.02 1.02 0 0 0 .93-.1c.27-.19.44-.5.44-.83v-2c0-.3-.13-.58-.36-.77l-2.64-2.2v-2.11l5.66 2.02a.987.987 0 0 0 1.33-.94v-2.5c0-.32-.16-.63-.42-.81l-6.58-4.7V5c0-1.65-1.35-3-3-3s-3 1.35-3 3v1.99l-6.58 4.7c-.26.19-.42.49-.42.81V15c0 .33.16.63.42.82ZM4 13.02l6.58-4.7c.26-.19.42-.49.42-.81v-2.5c0-.55.45-1 1-1s1 .45 1 1v2.5c0 .32.16.63.42.81l6.58 4.7v.57l-5.66-2.02a.987.987 0 0 0-1.33.94v4c0 .3.13.58.36.77l2.64 2.2v.05l-3.63-1.45c-.12-.05-.25-.07-.37-.07s-.25.02-.37.07l-3.63 1.45 2.64-2.25c.23-.19.36-.47.36-.77v-4c0-.33-.16-.63-.42-.82a.99.99 0 0 0-.91-.12l-5.66 2.02v-.57Z"></path>
+              </svg>
+            </div>
+            <div className={styleCardPass.chegadaIda}>
+              <span className={styleCardPass.horario}>7h00</span>
+              <span className={styleCardPass.data}>GRU · 16 de mai.</span>
+            </div>
+          </div>
+          <div className={styleCardPass.infoVolta}>
+            <div className={styleCardPass.partidaVolta}>
+              <span className={styleCardPass.horario}>23h20</span>
+              <span className={styleCardPass.data}>GRU · 23 de mai.</span>
+            </div>
+            <div className={styleCardPass.divIconeVolta}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15.97"
+                height="15.97"
+                fill="black"
+                stroke="black"
+                viewBox="0 0 24 24"
+                style={{
+                  transform: "rotate(270deg)",
+                }}
+              >
+                {/*<!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->*/}
+                <path d="M2.42 15.82c.27.19.61.23.91.12l5.66-2.02v2.11l-2.64 2.2c-.23.19-.36.47-.36.77v2a1 1 0 0 0 1.37.93l4.63-1.85 4.63 1.85a1.02 1.02 0 0 0 .93-.1c.27-.19.44-.5.44-.83v-2c0-.3-.13-.58-.36-.77l-2.64-2.2v-2.11l5.66 2.02a.987.987 0 0 0 1.33-.94v-2.5c0-.32-.16-.63-.42-.81l-6.58-4.7V5c0-1.65-1.35-3-3-3s-3 1.35-3 3v1.99l-6.58 4.7c-.26.19-.42.49-.42.81V15c0 .33.16.63.42.82ZM4 13.02l6.58-4.7c.26-.19.42-.49.42-.81v-2.5c0-.55.45-1 1-1s1 .45 1 1v2.5c0 .32.16.63.42.81l6.58 4.7v.57l-5.66-2.02a.987.987 0 0 0-1.33.94v4c0 .3.13.58.36.77l2.64 2.2v.05l-3.63-1.45c-.12-.05-.25-.07-.37-.07s-.25.02-.37.07l-3.63 1.45 2.64-2.25c.23-.19.36-.47.36-.77v-4c0-.33-.16-.63-.42-.82a.99.99 0 0 0-.91-.12l-5.66 2.02v-.57Z"></path>
+              </svg>
+            </div>
+            <div className={styleCardPass.chegadaVolta}>
+              <span className={styleCardPass.horario}>0h25</span>
+              <span className={styleCardPass.data}>GIG · 23 de mai.</span>
+            </div>
+          </div>
+        </section>
         <section className={styleCardPass.div_detalhes}>
           <div className={styleCardPass.div_bagagens}>
             <img src="/malas.png" alt="Bagagem porão" />
