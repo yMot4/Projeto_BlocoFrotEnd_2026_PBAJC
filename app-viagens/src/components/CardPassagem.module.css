@@ -3,7 +3,7 @@
   height: 166px;
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 8px;
 }
 
@@ -15,7 +15,7 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  background-color: greenyellow;
+  background-color: rgba(173, 255, 47, 0.9);
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -60,7 +60,7 @@
 .div_detalhes {
   width: 307px;
   height: 48px;
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.5);
   border-bottom-right-radius: 8px;
   display: flex;
   justify-content: space-around;
