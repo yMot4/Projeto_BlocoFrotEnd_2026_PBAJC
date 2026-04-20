@@ -18,7 +18,8 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
           </svg>
         </div>
         <div className={styleCardPass.card_lat_titulo}>
-          <span>{ciaAerea}</span>
+          {/* <span>{ciaAerea}</span> */}
+          <span>Airline</span>
         </div>
       </section>
       <div className={styleCardPass.div_info}>
@@ -34,7 +35,6 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
                 width="15.97"
                 height="15.97"
                 fill="black"
-                stroke="black"
                 viewBox="0 0 24 24"
                 style={{
                   transform: "rotate(-270deg)",
@@ -60,7 +60,6 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
                 width="15.97"
                 height="15.97"
                 fill="black"
-                stroke="black"
                 viewBox="0 0 24 24"
                 style={{
                   transform: "rotate(270deg)",
@@ -83,11 +82,13 @@ export default function CardPassagem({ ciaAerea, paradas, valor }) {
           </div>
           <div className={styleCardPass.div_paradas}>
             <span style={{ display: "inline", width: "auto" }}>
-              {paradas} Parada(s)
+              {/* {paradas} Parada(s) */}
+              1 Parada
             </span>
           </div>
           <div className={styleCardPass.div_valor}>
-            <span style={{ display: "inline", width: "auto" }}>R${valor}</span>
+            {/* <span style={{ display: "inline", width: "auto" }}>R${valor}</span> */}
+            <span style={{ display: "inline", width: "auto", }}>R$483</span>
           </div>
         </section>
       </div>

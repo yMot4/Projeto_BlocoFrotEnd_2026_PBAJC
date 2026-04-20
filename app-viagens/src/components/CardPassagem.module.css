@@ -3,7 +3,7 @@
   height: 166px;
   display: flex;
   flex-direction: row;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   border-radius: 8px;
 }
 
@@ -26,12 +26,6 @@
   border-radius: 50%;
   background: black;
 }
-
-/* .div_aviao > img {
-  width: 15.97px;
-  height: 15.97px;
-  transform: rotate(-270deg);
-} */
 
 .card_lat_titulo {
   text-transform: uppercase;
@@ -60,15 +54,12 @@
 .div_central {
   width: 307px;
   height: 118px;
-  /* background-color: orange; */
   border-top-right-radius: 8px;
 }
 
 .div_detalhes {
   width: 307px;
   height: 48px;
-  /* left: 35.45px;
-  bottom: 0; */
   background-color: yellow;
   border-bottom-right-radius: 8px;
   display: flex;
@@ -80,7 +71,6 @@
   height: 48px;
   display: flex;
   gap: 2px;
-  /* left: 40px; */
   align-items: center;
 }
 
@@ -101,16 +91,13 @@
 
 .infoIda,
 .infoVolta {
-  width: 307px;
+  /* width: 303px; */
   height: 40.5px;
-  top: 20px;
   display: flex;
-  /* flex-grow: 1;*/
-  margin-left: 10px;
+  margin-left: 6px;
   margin-top: 10px;
-  margin-bottom: 20px;
-  gap: 8px;
-  background-color: aquamarine;
+  margin-bottom: 16px;
+  gap: 16px;
 }
 
 .partidaIda,
@@ -119,20 +106,37 @@
 .chegadaVolta {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.partidaIda,
+.partidaVolta {
+  align-items: start;
 }
 
 .chegadaIda,
 .chegadaVolta {
-  justify-content: end;
+  align-items: end;
 }
 
 .divIconeIda,
 .divIconeVolta {
   width: 40px;
-  height: 27px;
+  height: 28px;
   background-color: lightgrey;
   border-radius: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 6px;
+}
+
+.horario {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.data {
+  font-size: 16px;
+  font-weight: 400;
 }
