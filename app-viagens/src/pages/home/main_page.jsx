@@ -1,10 +1,13 @@
 import "./main_page.css"
 import Card from "../../components/Card/Card.jsx"
+import SearchForm from "../../components/SearchForm/SearchForm.jsx"
+
 function Home() {
     return (
         <>
             <div className="tela">
                 <div className="foto_background"></div>
+                <SearchForm />
                 <div className="painel_verde">
                     <Card
                         imagem="Munique.jpg"
