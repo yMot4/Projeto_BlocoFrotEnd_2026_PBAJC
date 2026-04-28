@@ -1,8 +1,9 @@
-import Home from "./pages/home/main_page"
+// import Home from "./pages/Home/main_page"
+import Passagens from "./pages/Passagens/Passagens";
 function App() {
   return (
     <>
-      <Home />
+      <Passagens/>
     </>
   );
 }
