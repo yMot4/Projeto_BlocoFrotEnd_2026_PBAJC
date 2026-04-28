@@ -24,4 +24,6 @@
     background-color: #E8F3E9;
     border-top-left-radius: 600px;
     border-top-right-radius: 600px;
+    display: flex;
+    justify-content: center;
 }
