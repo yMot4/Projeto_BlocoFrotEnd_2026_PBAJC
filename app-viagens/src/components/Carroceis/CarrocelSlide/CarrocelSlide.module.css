@@ -1,0 +1,40 @@
+.carrocelSlideContainer {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.content {
+    background: #D6E6DA;
+    padding: 6.5px 9px;
+    border-radius: 100px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 13.92px; 
+}
+
+.botoesAncora {
+    text-decoration: none; 
+    height: auto; 
+    align-content: center;
+}
+
+.corpo {
+    background-color: #FFFF; 
+    aspect-ratio: 1; 
+    height: 9.33px; 
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.corpoAtivo {
+    background-color: #01490d; 
+    aspect-ratio: 1; 
+    height: 9.33px; 
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+}
