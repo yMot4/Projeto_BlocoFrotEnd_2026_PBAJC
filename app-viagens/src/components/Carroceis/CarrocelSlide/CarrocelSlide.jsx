@@ -1,15 +1,13 @@
 import { useRef, useEffect, useState, use } from "react";
 import Card from "../../Card/Card";
 import './CarrocelSlide.css';
-import '/src/Componentes/Carroceis/Carriceis.css'
+import '../../../components/Carroceis/Carriceis.css'
 
-const criarArray = (tamanho) => {
-    const array = Array.from({ length: tamanho });
+const criarArray = (maxItens) => {
+    const array = Array.from({ length: maxItens-1 });
     array.splice(0, 0, array[array.length - 1]);
     return array
 };
-
-
 
 const handleClick = (e, idDoCard) => {
     e.preventDefault();
@@ -22,7 +20,8 @@ const handleClick = (e, idDoCard) => {
             });
         }
     };
-function CarrocelSlide({ titulo, velocidadeCarrocel = 200, maxItens = 5 }) {
+
+function CarrocelSlide({ titulo, velocidadeCarrocel = 200, maxItens}) {
     const idDaVez = useRef(0);
     const carrocelRef = useRef(null);
     const ultimoToque = useRef(null);
@@ -39,9 +38,8 @@ useEffect(() => {
             if (!response.ok) throw new Error(`HTTP error: Status ${response.status}`);
             
             const result = await response.json();
-            setData(result); // Atualiza o estado
-
-            // O "pulo do gato": agendamos o scroll para o próximo ciclo de renderização
+            console.log(result)
+            setData(result); 
             setTimeout(() => {
                 const idPrimeiroCard = `carrocel-${titulo}-card-0`;
                 const elemento = document.getElementById(idPrimeiroCard);
@@ -52,7 +50,7 @@ useEffect(() => {
                         inline: 'center'
                     });
                 }
-            }, 100); // Um pequeno delay garante que o React já montou os elementos no DOM
+            }, 100);
 
         } catch (err) {
             console.error(err);
@@ -83,12 +81,8 @@ useEffect(() => {
         <section id={titulo} className="carrocelContainer">
             <div className="carrocelTitle">
                 <h2 className="carrocelTitle-text">{titulo}</h2></div>
-
-            {/* -=-=Estrutura=-=- */}
             <div className="carrocelContent">
-                {/*--=Container externo para segurar o conteúdo=-=- */}
                 <div className="carrocelContent-containerHolder">
-                    {/* -=-=Container interno com os cards=-=- */}
                     <div
                         className="carrocelContent-containerHolder-vitrini"
                         ref={carrocelRef}
