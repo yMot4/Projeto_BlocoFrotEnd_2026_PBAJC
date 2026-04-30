@@ -1,0 +1,119 @@
+.container {
+  background: rgba(15, 30, 15, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 6px;
+  width: 342px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 60px;
+  z-index: 10;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  cursor: text;
+  transition: background 0.15s ease;
+}
+
+.row:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.rowBottom {
+  display: flex;
+  align-items: center;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 14px;
+  flex: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.pill:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.pillText {
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pillDivider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.icon {
+  color: rgba(255, 255, 255, 0.60);
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.iconFlip {
+  transform: scaleX(-1);
+}
+
+.input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.90);
+  caret-color: #a3e635;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 6px;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #2d5a2d;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s ease, transform 0.1s ease;
+  margin-top: 2px;
+}
+
+.button:hover {
+  background: #1f3d20;
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
