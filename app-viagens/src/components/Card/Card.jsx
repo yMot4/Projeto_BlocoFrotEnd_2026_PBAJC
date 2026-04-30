@@ -2,6 +2,8 @@ import stylesCard from "./Card.module.css";
 import {Directions, Car, Building, Star} from '@boxicons/react';
 
 export default function Card({
+  idCarrocel,
+  numeroCard,
   imagem,
   titulo,
   iconePredio,
@@ -13,8 +15,10 @@ export default function Card({
   iconePlaca,
   valor,
 }) {
+const idDoCard = `carrocel-${idCarrocel}-card-${numeroCard}`;
+
   return (
-    <div className={stylesCard.card_container}>
+    <div id={idDoCard} className={stylesCard.card_container}>
       <div className={stylesCard.card_image}>
         <img
           src={"../../public/assets/Munique.webp"}

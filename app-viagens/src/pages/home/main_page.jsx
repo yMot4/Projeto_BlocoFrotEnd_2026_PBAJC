@@ -1,6 +1,7 @@
 import "./main_page.css"
 import Card from "../../components/Card/Card.jsx"
 import SearchForm from "../../components/SearchForm/SearchForm.jsx"
+import CarrocelSlide from "../../components/Carroceis/CarrocelSlide/CarrocelSlide.jsx"
 
 function Home() {
     return (
@@ -9,17 +10,7 @@ function Home() {
                 <div className="foto_background"></div>
                 <SearchForm />
                 <div className="painel_verde">
-                    <Card
-                        imagem="Munique.jpg"
-                        titulo="Munique, Alemanha"
-                        iconePredio="icone-hotel.png"
-                        subtitulo="Munich Marriott Hotel"
-                        iconeEstrela={"icone-estrela.png"}
-                        pontuacao={4.8}
-                        iconeAdicionar={"icone-plus.png"}
-                        iconeCar={"icone-car.png"}
-                        iconePlaca={"icone-placa.png"}
-                        valor={"R$2.458"} />
+                    <CarrocelSlide titulo="titulo" maxItens='10' />
                 </div>
             </div>
         </>
