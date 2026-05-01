@@ -1,9 +1,16 @@
-// import Home from "./pages/Home/main_page"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home/main_page";
 import Passagens from "./pages/Passagens/Passagens";
+
 function App() {
   return (
     <>
-      <Passagens/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/passagens" element={<Passagens />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
