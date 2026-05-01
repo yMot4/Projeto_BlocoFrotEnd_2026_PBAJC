@@ -1,0 +1,142 @@
+.container {
+  width: 342px;
+  height: 166px;
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid black; */
+  border-radius: 8px;
+}
+
+.card_lateral {
+  width: 35.45px;
+  height: 166px;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(173, 255, 47, 0.9);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.div_aviao {
+  width: 15.97px;
+  height: 15.97px;
+  border-radius: 50%;
+  background: black;
+}
+
+.card_lat_titulo {
+  text-transform: uppercase;
+  width: 8.53px;
+  height: 91.67px;
+}
+
+.card_lat_titulo > span {
+  display: flex;
+  transform: rotate(-90deg);
+  justify-content: flex-end;
+  color: #667312;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.div_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.div_central {
+  width: 307px;
+  height: 118px;
+  border-top-right-radius: 8px;
+}
+
+.div_detalhes {
+  width: 307px;
+  height: 48px;
+  background-color: rgba(255, 255, 0, 0.5);
+  border-bottom-right-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.div_bagagens {
+  width: 66px;
+  height: 48px;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.div_bagagens > img {
+  width: 32px;
+  height: 32px;
+}
+
+.div_paradas,
+.div_valor {
+  display: flex;
+  width: 66px;
+  height: 48px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.infoIda,
+.infoVolta {
+  /* width: 303px; */
+  height: 40.5px;
+  display: flex;
+  margin-left: 6px;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.partidaIda,
+.partidaVolta,
+.chegadaIda,
+.chegadaVolta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.partidaIda,
+.partidaVolta {
+  align-items: start;
+}
+
+.chegadaIda,
+.chegadaVolta {
+  align-items: end;
+}
+
+.divIconeIda,
+.divIconeVolta {
+  width: 40px;
+  height: 28px;
+  background-color: lightgrey;
+  border-radius: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.horario {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.data {
+  font-size: 16px;
+  font-weight: 400;
+}

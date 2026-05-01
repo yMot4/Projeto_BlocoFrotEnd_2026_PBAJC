@@ -1,4 +1,5 @@
-import Home from "./pages/home/main_page"
+import Home from "./pages/home/main_page";
+
 function App() {
   return (
     <>
@@ -6,4 +7,5 @@ function App() {
     </>
   );
 }
+
 export default App;
