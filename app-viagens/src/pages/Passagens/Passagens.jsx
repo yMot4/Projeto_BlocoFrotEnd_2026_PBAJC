@@ -1,7 +1,13 @@
 import style from "./Passagens.module.css";
-import { ArrowRightStroke, ArrowDownUp, MenuFilter } from "@boxicons/react";
+import {
+  ArrowRightStroke,
+  ArrowDownUp,
+  MenuFilter,
+  LoaderLinesAlt,
+} from "@boxicons/react";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import CardPassagem from "../../components/CardPassagem/CardPassagem";
 
 export default function Passagens() {
   const [dados, setDados] = useState([]);
@@ -35,6 +41,9 @@ export default function Passagens() {
     fetchDados();
   }, [origem, destino, dataPartida, numeroViajantes]);
 
+  if (loading) return <LoaderLinesAlt rotate={45} />;
+  if (error) return <p>Erro: {error}</p>;
+
   return (
     <div className={style.tela}>
       <div className={style.container}>
@@ -55,7 +64,12 @@ export default function Passagens() {
             <span>Filtrar</span>
           </div>
         </div>
-        <section className={style.section_cards}></section>
+        <section className={style.section_cards}>
+          <h2>Resultado da Pesquisa</h2>
+          {dados.map((dado) => (
+            <CardPassagem key={dado.id} dados={dado} />
+          ))}
+        </section>
       </div>
     </div>
   );
