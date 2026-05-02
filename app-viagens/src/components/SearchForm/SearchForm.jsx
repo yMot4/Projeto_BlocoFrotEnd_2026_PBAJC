@@ -7,7 +7,7 @@ export default function SearchForm() {
   const [origem, setOrigem] = useState("");
   const [destino, setDestino] = useState("");
   const [dataPartida, setDataPartida] = useState("");
-  const [numeroViajantes, setNumeroViajantes] = useState(1);
+  const [numeroViajantes, setNumeroViajantes] = useState("");
 
   // const handlePesquisar = () => {
   //   alert(`Pesquisando: ${origem || "qualquer origem"} → ${destino || "qualquer destino"}`);
@@ -20,7 +20,7 @@ export default function SearchForm() {
         <input
           className={styles.input}
           type="text"
-          placeholder="De onde você sai?"
+          placeholder="Cidade de partida?"
           value={origem}
           onChange={(e) => setOrigem(e.target.value)}
         />
@@ -33,7 +33,7 @@ export default function SearchForm() {
         <input
           className={styles.input}
           type="text"
-          placeholder="Para onde você vai?"
+          placeholder="Cidade de destino"
           value={destino}
           onChange={(e) => setDestino(e.target.value)}
         />
@@ -60,7 +60,7 @@ export default function SearchForm() {
           <input
             className={styles.input}
             type="text"
-            placeholder="Número de viajantes (1, 2, etc)"
+            placeholder="Nº viajantes (Ex.: 1)"
             value={numeroViajantes}
             onChange={(e) => setNumeroViajantes(e.target.value)}
           />
