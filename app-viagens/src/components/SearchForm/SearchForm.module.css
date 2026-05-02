@@ -86,6 +86,10 @@
   color: rgba(255, 255, 255, 0.50);
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* inverte as cores, deixando o ícone branco. Funciona em Chrome, Edge e Safari */
+}
+
 .divider {
   height: 1px;
   background: rgba(255, 255, 255, 0.08);
