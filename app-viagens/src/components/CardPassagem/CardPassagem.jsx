@@ -1,21 +1,23 @@
 import styleCardPass from "./CardPassagem.module.css";
 
 export default function CardPassagem({
-  ciaAerea,
-  horaPartidaIda,
-  aeroPartidaIda,
-  dataPartidaIda,
-  horaChegadaIda,
-  aeroChegadaIda,
-  dataChegadaIda,
-  horaPartidaVolta,
-  aeroPartidaVolta,
-  dataPartidaVolta,
-  horaChegadaVolta,
-  aeroChegadaVolta,
-  dataChegadaVolta,
-  paradas,
-  valor,
+  dados: {
+    ciaAerea,
+    horaPartidaIda,
+    aeroPartidaIda,
+    dataPartidaIda,
+    horaChegadaIda,
+    aeroChegadaIda,
+    dataChegadaIda,
+    horaPartidaVolta,
+    aeroPartidaVolta,
+    dataPartidaVolta,
+    horaChegadaVolta,
+    aeroChegadaVolta,
+    dataChegadaVolta,
+    paradas,
+    valor,
+  },
 }) {
   return (
     <div className={styleCardPass.container}>
