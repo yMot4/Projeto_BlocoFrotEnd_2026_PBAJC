@@ -20,7 +20,7 @@ export default function SearchForm() {
         <input
           className={styles.input}
           type="text"
-          placeholder="Cidade de partida?"
+          placeholder="Cidade de partida"
           value={origem}
           onChange={(e) => setOrigem(e.target.value)}
         />
@@ -47,7 +47,7 @@ export default function SearchForm() {
           {/* <span className={styles.pillText}>15/05 – 27/07</span> */}
           <input
             className={styles.input}
-            type="text"
+            type="date"
             placeholder="dd/mm/aaaa"
             value={dataPartida}
             onChange={(e) => setDataPartida(e.target.value)}
