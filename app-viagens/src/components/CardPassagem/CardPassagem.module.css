@@ -5,6 +5,7 @@
   flex-direction: row;
   /* border: 1px solid black; */
   border-radius: 8px;
+  /* opacity: 0.9; */
 }
 
 .card_lateral {
@@ -55,12 +56,13 @@
   width: 307px;
   height: 118px;
   border-top-right-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .div_detalhes {
   width: 307px;
   height: 48px;
-  background-color: rgba(255, 255, 0, 0.5);
+  background-color: rgba(255, 255, 0, 0.7);
   border-bottom-right-radius: 8px;
   display: flex;
   justify-content: space-around;

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "ciaAerea": "LATAM",
     "horaPartidaIda": "08:30",
     "aeroPartidaIda": "GRU",
@@ -14,9 +15,10 @@
     "aeroChegadaVolta": "GRU",
     "dataChegadaVolta": "2026-05-20",
     "paradas": 0,
-    "valor": 3500.00
+    "valor": 3500.0
   },
   {
+    "id": 2,
     "ciaAerea": "Gol",
     "horaPartidaIda": "09:15",
     "aeroPartidaIda": "SDU",
@@ -31,9 +33,10 @@
     "aeroChegadaVolta": "SDU",
     "dataChegadaVolta": "2026-06-10",
     "paradas": 0,
-    "valor": 1200.00
+    "valor": 1200.0
   },
   {
+    "id": 3,
     "ciaAerea": "Azul",
     "horaPartidaIda": "07:00",
     "aeroPartidaIda": "CNF",
@@ -48,9 +51,10 @@
     "aeroChegadaVolta": "CNF",
     "dataChegadaVolta": "2026-07-26",
     "paradas": 1,
-    "valor": 4200.00
+    "valor": 4200.0
   },
   {
+    "id": 4,
     "ciaAerea": "American Airlines",
     "horaPartidaIda": "22:45",
     "aeroPartidaIda": "GRU",
@@ -65,6 +69,6 @@
     "aeroChegadaVolta": "GRU",
     "dataChegadaVolta": "2026-08-16",
     "paradas": 0,
-    "valor": 5600.00
+    "valor": 5600.0
   }
 ]
