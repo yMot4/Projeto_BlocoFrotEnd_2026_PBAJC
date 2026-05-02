@@ -43,7 +43,7 @@ export default function SearchForm() {
 
       <div className={styles.rowBottom}>
         <div className={styles.pill}>
-          <Calendar className={styles.icon} />
+          {/* <Calendar className={styles.icon} /> */}
           {/* <span className={styles.pillText}>15/05 – 27/07</span> */}
           <input
             className={styles.input}
