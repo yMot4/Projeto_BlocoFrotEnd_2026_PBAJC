@@ -12,7 +12,7 @@ import CardPassagem from "../../components/CardPassagem/CardPassagem";
 export default function Passagens() {
   const [dados, setDados] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [erro, setErro] = useState(null);
+  const [error, setError] = useState(null);
   const location = useLocation();
 
   const params = new URLSearchParams(location.search);
@@ -25,15 +25,15 @@ export default function Passagens() {
     const fetchDados = async () => {
       try {
         setLoading(true);
-        setErro(null);
-        const response = await fetch();
+        setError(null);
+        const response = await fetch("/fakeAPI.json");
         if (!response.ok) {
           throw new Error(`Erro na API: ${response.status}`);
         }
         const resultado = await response.json();
         setDados(resultado);
       } catch (erro) {
-        setErro(erro.message);
+        setError(erro.message);
       } finally {
         setLoading(false);
       }
