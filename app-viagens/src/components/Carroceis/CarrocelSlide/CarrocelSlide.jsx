@@ -124,7 +124,8 @@ useEffect(() => {
     return (
         <section id={titulo} className={stylesContainer.carrocelContainer}>
             <div className={stylesContainer.carrocelTitle}>
-                <h2>{titulo}</h2>
+                {/* <h2>{titulo}</h2> */}
+                <h2>Pacotes Promocionais</h2>
             </div>
             
             <div className={stylesContainer.carrocelContent}>
