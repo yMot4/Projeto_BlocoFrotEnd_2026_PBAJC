@@ -20,13 +20,16 @@ export default function Passagens() {
   const destino = params.get("destino");
   const dataPartida = params.get("dataPartida");
   const dataVolta = params.get("dataVolta");
-  const numeroViajantes = params.get("numeroViajantes");
+  //   const numeroViajantes = params.get("numeroViajantes");
 
   useEffect(() => {
     const fetchDados = async () => {
       try {
         setLoading(true);
         setError(null);
+        // const response = await fetch(
+        //   `https://travelagencyapi-a5zb.onrender.com/api/v1/frontend/travel-tickets/search?origem=${origem}&destino=${destino}&dataPartida=${dataPartida}&dataVolta=${dataVolta}`,
+        // );
         const response = await fetch("/fakeAPI.json");
         if (!response.ok) {
           throw new Error(`Erro na API: ${response.status}`);
@@ -40,7 +43,7 @@ export default function Passagens() {
       }
     };
     fetchDados();
-  }, [origem, destino, dataPartida, dataVolta, numeroViajantes]);
+  }, [origem, destino, dataPartida, dataVolta]);
 
   if (loading) return <LoaderLinesAlt rotate={45} />;
   if (error) return <p>Erro: {error}</p>;
