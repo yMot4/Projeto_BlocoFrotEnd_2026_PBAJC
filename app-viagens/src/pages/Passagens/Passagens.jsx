@@ -19,6 +19,7 @@ export default function Passagens() {
   const origem = params.get("origem");
   const destino = params.get("destino");
   const dataPartida = params.get("dataPartida");
+  const dataVolta = params.get("dataVolta");
   const numeroViajantes = params.get("numeroViajantes");
 
   useEffect(() => {
@@ -39,7 +40,7 @@ export default function Passagens() {
       }
     };
     fetchDados();
-  }, [origem, destino, dataPartida, numeroViajantes]);
+  }, [origem, destino, dataPartida, dataVolta, numeroViajantes]);
 
   if (loading) return <LoaderLinesAlt rotate={45} />;
   if (error) return <p>Erro: {error}</p>;
