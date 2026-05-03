@@ -7,6 +7,7 @@ export default function SearchForm() {
   const [origem, setOrigem] = useState("");
   const [destino, setDestino] = useState("");
   const [dataPartida, setDataPartida] = useState("");
+  const [dataVolta, setDataVolta] = useState("");
   const [numeroViajantes, setNumeroViajantes] = useState("");
 
   // const handlePesquisar = () => {
@@ -45,16 +46,31 @@ export default function SearchForm() {
         <div className={styles.pill}>
           {/* <Calendar className={styles.icon} /> */}
           {/* <span className={styles.pillText}>15/05 – 27/07</span> */}
+          <label htmlFor="dataPartida" className={styles.pill_label}>Data partida</label>
           <input
             className={styles.input}
-            type="date"
-            placeholder="dd/mm/aaaa"
+            type="date"            
             value={dataPartida}
             onChange={(e) => setDataPartida(e.target.value)}
           />
         </div>
         <div className={styles.pillDivider} />
         <div className={styles.pill}>
+          {/* <Calendar className={styles.icon} /> */}
+          {/* <span className={styles.pillText}>15/05 – 27/07</span> */}
+          <label htmlFor="dataVolta" className={styles.pill_label}>Data retorno</label>
+          <input
+            className={styles.input}
+            type="date"            
+            value={dataVolta}
+            onChange={(e) => setDataVolta(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className={styles.divider} />
+
+      <div className={styles.rowBottom}>
+        <div className={styles.pill_viajantes}>
           <Group className={styles.icon} />
           {/* <span className={styles.pillText}>2 Viajantes</span> */}
           <input
