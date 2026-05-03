@@ -86,7 +86,7 @@ export default function SearchForm() {
       <div className={styles.divider} />
 
       <Link
-        to={`/passagens?origem=${origem}&destino=${destino}&dataPartida=${dataPartida}&numeroViajantes=${numeroViajantes}`}
+        to={`/passagens?origem=${origem}&destino=${destino}&dataPartida=${dataPartida}&dataVolta=${dataVolta}&numeroViajantes=${numeroViajantes}`}
       >
         <button className={styles.button}>Pesquisar</button>
       </Link>
