@@ -3,6 +3,8 @@ import styles from "./ApiStatus.module.css";
 
 const HEALTH_URL =
   "https://travelagencyapi-a5zb.onrender.com/api/v1/providers/health";
+const SWAGGER_URL =
+  "https://travelagencyapi-a5zb.onrender.com/swagger/index.html";
 const POLL_MS = 30000;
 const TIMEOUT_MS = 15000;
 
@@ -43,6 +45,21 @@ export default function ApiStatus() {
   }, []);
 
   const { className, text } = STATUS[status];
+
+  if (status === "online") {
+    return (
+      <a
+        className={`${styles.container} ${styles.containerLink}`}
+        href={SWAGGER_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Abrir Swagger em nova aba"
+      >
+        <span className={`${styles.dot} ${className}`} aria-hidden="true" />
+        <span className={styles.label}>{text}</span>
+      </a>
+    );
+  }
 
   return (
     <div className={styles.container}>
