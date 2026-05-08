@@ -97,15 +97,15 @@ useEffect(() => {
             <Card
                 idCarrocel={titulo}
                 numeroCard={i}
-                imagem="Munique.jpg"
+                imagem="/Munique.jpg"
                 titulo="Munique, Alemanha"
-                iconePredio="icone-hotel.png"
+                iconePredio="/icone-hotel.png"
                 subtitulo="Munich Marriott Hotel"
-                iconeEstrela="icone-estrela.png"
+                iconeEstrela="/icone-estrela.png"
                 pontuacao={4.8}
-                iconeAdicionar="icone-plus.png"
-                iconeCar="icone-car.png"
-                iconePlaca="icone-placa.png"
+                iconeAdicionar="/icone-plus.png"
+                iconeCar="/icone-car.png"
+                iconePlaca="/icone-placa.png"
                 valor="R$2.458"
             />
         </div>
