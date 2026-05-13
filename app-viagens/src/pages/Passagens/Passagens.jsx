@@ -6,7 +6,7 @@ import {
   LoaderLinesAlt,
 } from "@boxicons/react";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import CardPassagem from "../../components/CardPassagem/CardPassagem";
 
 export default function Passagens() {
@@ -71,7 +71,9 @@ export default function Passagens() {
         <section className={style.section_cards}>
           <h2>Resultado da Pesquisa</h2>
           {dados.map((dado) => (
-            <CardPassagem key={dado.id} dados={dado} />
+            <Link key={dado.id} to={`/detalhes/${dado.id}`}>
+              <CardPassagem key={dado.id} dados={dado} />
+            </Link>
           ))}
         </section>
       </div>
