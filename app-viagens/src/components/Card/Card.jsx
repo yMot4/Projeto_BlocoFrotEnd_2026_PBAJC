@@ -21,7 +21,7 @@ const idDoCard = `carrocel-${idCarrocel}-card-${numeroCard}`;
     <div id={idDoCard} className={stylesCard.card_container}>
       <div className={stylesCard.card_image}>
         <img
-          src={"../../public/assets/Munique.webp"}
+          src={"/assets/Munique.webp"}
           alt="Imagem do destino"
           className={stylesCard.image}
         />
