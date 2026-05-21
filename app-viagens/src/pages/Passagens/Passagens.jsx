@@ -71,7 +71,7 @@ export default function Passagens() {
         <section className={style.section_cards}>
           <h2>Resultado da Pesquisa</h2>
           {dados.map((dado) => (
-            <Link key={dado.id} to={`/detalhes/${dado.id}`}>
+            <Link key={dado.id} to={`/detalhes/${dado.id}`} state={dado}>
               <CardPassagem key={dado.id} dados={dado} />
             </Link>
           ))}
