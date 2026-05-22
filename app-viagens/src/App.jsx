@@ -6,14 +6,15 @@ import Detalhes from "./pages/Detalhes/Detalhes";
 function App() {
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/passagens" element={<Passagens />} />
-          <Route path="/detalhes" element={<Detalhes/>} />
+          <Route path="/detalhes" element={<Detalhes/>} /> 
         </Routes>
-      </BrowserRouter>  */}
-      <Detalhes />
+      </BrowserRouter>  
+      {/* <Detalhes /> */}
+      
     </>
   );
 }
