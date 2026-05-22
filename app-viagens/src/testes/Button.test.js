@@ -5,7 +5,7 @@ import Button from "../components/Button";
 
 test("renderiza botão", ()=>{
     render(COLOCAR O BUTTON INTEIRO AQUI);
-    expect(screen.getByRole("button", {name: /voltar/i})).toBeInTheDocument();
+    expect(screen.getByRole("button", {name: /voltar/i})).toBeInTheDocument(); //i faz ignorar maiusculas e minusculas
 });
 
 test("executa clique", async()=>{
