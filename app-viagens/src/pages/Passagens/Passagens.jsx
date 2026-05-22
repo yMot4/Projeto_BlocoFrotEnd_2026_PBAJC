@@ -6,7 +6,8 @@ import {
   LoaderLinesAlt,
 } from "@boxicons/react";
 import { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import Button from "../../components/Button";
 import CardPassagem from "../../components/CardPassagem/CardPassagem";
 
 export default function Passagens() {
@@ -52,11 +53,13 @@ export default function Passagens() {
     <div className={style.tela}>
       <div className={style.container}>
         <div className={style.section_back}>
-          <div className={style.button_back}>
+          {/* <div className={style.button_back}>
             <a href="/">
               <ArrowRightStroke rotate={180} size="md" />
             </a>
-          </div>
+          </div> */}
+          <Button style={style.button_back} />
+
         </div>
         <div className={style.section_filters}>
           <div className={style.button_filters}>
