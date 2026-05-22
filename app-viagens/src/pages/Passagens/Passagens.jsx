@@ -15,6 +15,7 @@ export default function Passagens() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const params = new URLSearchParams(location.search);
   const origem = params.get("origem");
@@ -52,14 +53,10 @@ export default function Passagens() {
   return (
     <div className={style.tela}>
       <div className={style.container}>
-        <div className={style.section_back}>
-          {/* <div className={style.button_back}>
-            <a href="/">
-              <ArrowRightStroke rotate={180} size="md" />
-            </a>
-          </div> */}
-          <Button style={style.button_back} />
-
+        <div className={style.section_back}>          
+          <Button className={style.button_back} onClick={()=> navigate(-1)}>
+            <ArrowRightStroke rotate={180} size="md" color="white" />
+          </Button>  
         </div>
         <div className={style.section_filters}>
           <div className={style.button_filters}>
