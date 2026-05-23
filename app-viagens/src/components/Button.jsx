@@ -1,6 +1,6 @@
 export default function Button({onClick, children, className}){
     return(
-        <button className={className} onClick={onClick}>
+        <button aria-label={aria-label} className={className} onClick={aria-label}>
             {children}
         </button>
     );
