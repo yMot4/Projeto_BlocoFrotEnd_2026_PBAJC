@@ -22,7 +22,7 @@ export default function Detalhes() {
 
     if (!item) return <p className={style.status}>Nenhum dado encontrado.</p>;
 
-    const { destino, preco, vooIda, vooVolta, hoteis, carros } = item;
+    const { destino, preco, vooIda, vooVolta, } = item;
 
     const carroSelecionado = carros?.find((c) => c.modelo === valueCarro);
 
@@ -81,7 +81,7 @@ export default function Detalhes() {
 
                         <div className={style.section_opcionais}>
                             <h2>Hotéis</h2>
-                            {hoteis?.length > 0 ? (
+                            {/* {hoteis?.length > 0 ? (
                                 hoteis.map((hotel) => (
                                     <div key={hotel.id} className={style.card_hotel}>
                                         <span>{hotel.nome}</span>
@@ -91,10 +91,10 @@ export default function Detalhes() {
                                 ))
                             ) : (
                                 <span>Nenhum hotel disponível</span>
-                            )}
+                            )} */}
 
                             <h2>Aluguel de Carros</h2>
-                            <select
+                            {/* <select
                                 className={style.select_carro}
                                 value={valueCarro}
                                 onChange={(e) => { setValueCarro(e.target.value); setCount(0); }}
@@ -137,7 +137,7 @@ export default function Detalhes() {
                                         </span>
                                     </div>
                                 </>
-                            )}
+                            )} */}
                         </div>
                     </div>
 
