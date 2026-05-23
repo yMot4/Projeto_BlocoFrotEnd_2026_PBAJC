@@ -28,13 +28,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
-.button_back a {
+/* .button_back a {
   text-decoration: none;
   color: white;
   padding: 0;
-}
+} */
 
 .section_filters {
   display: flex;
