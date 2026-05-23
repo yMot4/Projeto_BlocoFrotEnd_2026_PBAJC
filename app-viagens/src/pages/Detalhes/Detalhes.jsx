@@ -67,7 +67,7 @@ export default function Detalhes() {
         <div className={style.tela}>
             <div className={style.container}>
                 <div className={style.section_back}>
-                    <Button aria-label="Voltar" className={style.button_back} onClick={() => navigate(-1)}>
+                    <Button ariaLabel="Voltar" className={style.button_back} onClick={() => navigate(-1)}>
                         <ArrowRightStroke rotate={180} size="md" color="white" />
                     </Button>
                 </div>
