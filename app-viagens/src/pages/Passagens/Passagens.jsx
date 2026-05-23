@@ -64,36 +64,33 @@ export default function Passagens() {
         return () => controller.abort();
     }, [prefetched, origem, destino, dataIda, dataVolta, adultos, criancas]);
 
-    if (loading) return <LoaderLinesAlt rotate={45}/>;
-    if (error) return <p>Erro: {error}</p>;
-
-    return (
-        <div className={style.tela}>
-            <div className={style.container}>
-                <div className={style.section_back}>
-                    <div className={style.button_back}>
-                        <a href="/">
-                            <ArrowRightStroke rotate={180} size="md"/>
-                        </a>
-                    </div>
-                </div>
-                <div className={style.section_filters}>
-                    <div className={style.button_filters}>
-                        <ArrowDownUp/>
-                        <span>Ordenar</span>
-                    </div>
-                    <div className={style.button_filters}>
-                        <MenuFilter/>
-                        <span>Filtrar</span>
-                    </div>
-                </div>
-                <section className={style.section_cards}>
-                    <h2>Resultado da Pesquisa</h2>
-                    {dados.map((dado) => (
-                        <CardPassagem key={dado.id} dados={dado}/>
-                    ))}
-                </section>
-            </div>
+  return (
+    <div className={style.tela}>
+      <div className={style.container}>
+        <div className={style.section_back}>          
+          <Button ariaLabel="Voltar" className={style.button_back} onClick={()=> navigate(-1)}>
+            <ArrowRightStroke rotate={180} size="md" color="white" />
+          </Button>  
         </div>
-    );
+        <div className={style.section_filters}>
+          <div className={style.button_filters}>
+            <ArrowDownUp />
+            <span>Ordenar</span>
+          </div>
+          <div className={style.button_filters}>
+            <MenuFilter />
+            <span>Filtrar</span>
+          </div>
+        </div>
+        <section className={style.section_cards}>
+          <h2>Resultado da Pesquisa</h2>
+          {dados.map((dado) => (
+            <Link key={dado.id} to={`/detalhes/${dado.id}`} state={dado}>
+              <CardPassagem key={dado.id} dados={dado} />
+            </Link>
+          ))}
+        </section>
+      </div>
+    </div>
+  );
 }
