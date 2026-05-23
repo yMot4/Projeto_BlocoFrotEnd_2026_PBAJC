@@ -8,50 +8,19 @@ import {
     SteeringWheel,
     Path,
 } from "@boxicons/react";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import mockVoos from "../../../public/mockVoos";
-
-function fetchMock(id) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const data = mockVoos[id];
-            if (data) resolve(data);
-            else reject(new Error(`Nenhum voo encontrado com id ${id}`));
-        }, 600); // simula conexao 
-    });
-}
+import { useState } from "react";
+import Button from "../../components/Button";
+import { useParams, useLocation } from "react-router-dom";
 
 export default function Detalhes() {
-    // const { id } = useParams();
-    const id = 1;
-    const [item, setItem] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const { id } = useParams();
+    const location = useLocation();
+    const item = location.state;
+
     const [count, setCount] = useState(0);
     const [valueCarro, setValueCarro] = useState("nenhum");
 
-    useEffect(() => {
-        setLoading(true);
-        setItem(null);
-        setError(null);
-        setValueCarro("nenhum");
-        setCount(0);
-
-        fetchMock(id)
-            .then((data) => {
-                setItem(data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                setError(err.message);
-                setLoading(false);
-            });
-    }, [id]);
-
-    if (loading) return <p className={style.status}>Carregando...</p>;
-    if (error)   return <p className={style.status}>Erro: {error}</p>;
-    if (!item)   return null;
+    if (!item) return <p className={style.status}>Nenhum dado encontrado.</p>;
 
     const { destino, preco, vooIda, vooVolta, hoteis, carros } = item;
 
@@ -98,9 +67,9 @@ export default function Detalhes() {
         <div className={style.tela}>
             <div className={style.container}>
                 <div className={style.section_back}>
-                    <div className={style.button_back}>
-                        <a href="/"><ArrowRightStroke rotate={180} size="md" /></a>
-                    </div>
+                    <Button aria-label="Voltar" className={style.button_back} onClick={() => navigate(-1)}>
+                        <ArrowRightStroke rotate={180} size="md" color="white" />
+                    </Button>
                 </div>
 
                 <div className={style.container_detalhes}>
