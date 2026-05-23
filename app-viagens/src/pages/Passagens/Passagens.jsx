@@ -1,54 +1,68 @@
 import style from "./Passagens.module.css";
 import {
-  ArrowRightStroke,
-  ArrowDownUp,
-  MenuFilter,
-  LoaderLinesAlt,
+    ArrowRightStroke,
+    ArrowDownUp,
+    MenuFilter,
+    LoaderLinesAlt,
 } from "@boxicons/react";
-import { useEffect, useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
-import Button from "../../components/Button";
+import {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
 import CardPassagem from "../../components/CardPassagem/CardPassagem";
 
 export default function Passagens() {
-  const [dados, setDados] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const location = useLocation();
-  const navigate = useNavigate();
+    const location = useLocation();
+    const prefetched = location.state?.results;
+    const [dados, setDados] = useState(prefetched ?? []);
+    const [loading, setLoading] = useState(!prefetched);
+    const [error, setError] = useState(null);
 
-  const params = new URLSearchParams(location.search);
-  const origem = params.get("origem");
-  const destino = params.get("destino");
-  const dataPartida = params.get("dataPartida");
-  const dataVolta = params.get("dataVolta");
-  //   const numeroViajantes = params.get("numeroViajantes");
+    const params = new URLSearchParams(location.search);
+    const origem = params.get("origem");
+    const destino = params.get("destino");
+    const dataIda = params.get("dataIda");
+    const dataVolta = params.get("dataVolta");
+    const adultos = params.get("adultos") ?? "1";
+    const criancas = params.get("criancas") ?? "0";
 
-  useEffect(() => {
-    const fetchDados = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        // const response = await fetch(
-        //   `https://travelagencyapi-a5zb.onrender.com/api/v1/frontend/travel-tickets/search?origem=${origem}&destino=${destino}&dataPartida=${dataPartida}&dataVolta=${dataVolta}`,
-        // );
-        const response = await fetch("/fakeAPI.json");
-        if (!response.ok) {
-          throw new Error(`Erro na API: ${response.status}`);
+    useEffect(() => {
+        if (prefetched) return;
+        if (!origem || !destino || !dataIda) {
+            setError("Parâmetros de busca incompletos.");
+            setLoading(false);
+            return;
         }
-        const resultado = await response.json();
-        setDados(resultado);
-      } catch (erro) {
-        setError(erro.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchDados();
-  }, [origem, destino, dataPartida, dataVolta]);
 
-  if (loading) return <LoaderLinesAlt rotate={45} />;
-  if (error) return <p>Erro: {error}</p>;
+        const controller = new AbortController();
+        const fetchDados = async () => {
+            try {
+                setLoading(true);
+                setError(null);
+                const qs = new URLSearchParams({
+                    Origem: origem,
+                    Destino: destino,
+                    DataIda: dataIda,
+                    Adultos: adultos,
+                    Criancas: criancas,
+                });
+                if (dataVolta) qs.set("DataVolta", dataVolta);
+                const response = await fetch(
+                    `https://travelagencyapi-a5zb.onrender.com/api/v1/travel-tickets/search?${qs.toString()}`,
+                    {signal: controller.signal},
+                );
+                if (!response.ok) {
+                    throw new Error(`Erro na API: ${response.status}`);
+                }
+                const resultado = await response.json();
+                setDados(resultado);
+            } catch (erro) {
+                if (erro.name !== "AbortError") setError(erro.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchDados();
+        return () => controller.abort();
+    }, [prefetched, origem, destino, dataIda, dataVolta, adultos, criancas]);
 
   return (
     <div className={style.tela}>
