@@ -6,8 +6,8 @@ import {
     LoaderLinesAlt,
 } from "@boxicons/react";
 import {useEffect, useState} from "react";
-import {useLocation} from "react-router-dom";
-import CardPassagem from "../../components/CardPassagem/CardPassagem";
+import { useLocation, useNavigate, Link } from "react-router-dom";import CardPassagem from "../../components/CardPassagem/CardPassagem";
+import Button from "../../components/Button";
 
 export default function Passagens() {
     const location = useLocation();
@@ -15,6 +15,7 @@ export default function Passagens() {
     const [dados, setDados] = useState(prefetched ?? []);
     const [loading, setLoading] = useState(!prefetched);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const params = new URLSearchParams(location.search);
     const origem = params.get("origem");
