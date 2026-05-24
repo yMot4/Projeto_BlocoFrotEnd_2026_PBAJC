@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import CardPassagem from "../components/CardPassagem/CardPassagem";
 
-TestTube("renderiza dados da passagem", ()=>{
-    const mockDados = {
+test("renderiza dados da passagem", () => {
+  const mockDados = {
     ciaAerea: "LATAM",
     horaPartidaIda: "08:00",
     aeroPartidaIda: "GIG",
@@ -19,10 +19,10 @@ TestTube("renderiza dados da passagem", ()=>{
     paradas: 1,
     valor: 1200,
   };
-  
+
   render(<CardPassagem dados={mockDados} />);
   expect(screen.getByText("LATAM")).toBeInTheDocument();
-  expect(screen.getByText("08:00")).toBeInTheDocument(); 
+  expect(screen.getByText("08:00")).toBeInTheDocument();
   expect(screen.getByText("GIG · 22/05/2026")).toBeInTheDocument(); //Alt + 0183 para o ponto
   expect(screen.getByText("10:00")).toBeInTheDocument();
   expect(screen.getByText("GRU · 22/05/2026")).toBeInTheDocument();
@@ -37,9 +37,5 @@ TestTube("renderiza dados da passagem", ()=>{
 
   expect(screen.getByText("1 Parada")).toBeInTheDocument();
 
-  expect(screen.getByText("R$1200")).toBeInTheDocument(); 
-  
-
+  expect(screen.getByText("R$1200")).toBeInTheDocument();
 });
-
-
