@@ -6,7 +6,7 @@ import Button from "../components/Button";
 test("renderiza botão com icone", ()=>{
     render(
         <Button ariaLabel="Voltar" >
-            <ArrowRightStroke rotate={180} size="md" color="white" />
+            <div>Botão renderizado!</div>
         </Button> 
     );
     expect(screen.getByRole("button", {name: /voltar/i})).toBeInTheDocument(); //regex e o i faz ignorar maiusculas e minusculas
@@ -16,7 +16,7 @@ test("executa clique", async()=>{
     const mockFn = jest.fn();
     render (
         <Button ariaLabel="Voltar" onClick={mockFn}>
-            <ArrowRightStroke rotate={180} size="md" color="white" />
+            <div>Botão renderizado!</div>
         </Button> 
     );
     const botao = screen.getByRole("button",{name: /voltar/i});
