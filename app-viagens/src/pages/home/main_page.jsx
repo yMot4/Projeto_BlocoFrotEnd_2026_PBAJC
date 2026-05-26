@@ -3,6 +3,7 @@ import Card from "../../components/Card/Card.jsx"
 import SearchForm from "../../components/SearchForm/SearchForm.jsx"
 import CarrocelSlide from "../../components/Carroceis/CarrocelSlide/CarrocelSlide.jsx"
 import ApiStatus from "../../components/ApiStatus/ApiStatus.jsx"
+import UserBadge from "../../components/UserBadge/UserBadge.jsx"
 
 function Home() {
     return (
@@ -10,6 +11,7 @@ function Home() {
             <div className="tela">
                 <div className="foto_background"></div>
                 <ApiStatus />
+                <UserBadge />
                 <SearchForm />
                 <div className="painel_verde">
                     <CarrocelSlide titulo="titulo" maxItens='10' />
