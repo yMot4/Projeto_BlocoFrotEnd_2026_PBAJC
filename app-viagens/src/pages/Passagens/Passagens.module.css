@@ -66,11 +66,16 @@
 }
 
 
+.titulo_section_cards {
+  text-align: center;
+  margin-top: 20px;
+}
+
 @media (min-width: 1366px) {
-  .tela{
+  .tela {
     width: 100%;
-  } 
-  .container{
+  }
+  .container {
     overflow-x: hidden;
   }
   .section_back {
@@ -86,21 +91,21 @@
     font-size: 22px;
   }
 
-  .titulo_section_cards{
+  .titulo_section_cards {
     font-size: x-large;
     display: flex;
     justify-content: center;
   }
 
-  .section_cards{
+  .section_cards {
     width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 40px;    
+    gap: 40px;
   }
 
-  .passagens{
+  .passagens {
     display: flex;
     flex-direction: column;
     align-items: center;
