@@ -143,3 +143,23 @@
   font-size: 16px;
   font-weight: 400;
 }
+
+@media (min-width: 1366px) {
+  .container {    
+    width: 400px;   
+    height: auto;
+  }
+
+  .div_central {
+    width: 340px;
+    height: 118px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .div_detalhes {
+    width: 340px;
+    height: 48px;
+  }
+}
