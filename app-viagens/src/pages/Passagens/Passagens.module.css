@@ -65,7 +65,14 @@
   gap: 12px;
 }
 
+
 @media (min-width: 1366px) {
+  .tela{
+    width: 100%;
+  } 
+  .container{
+    overflow-x: hidden;
+  }
   .section_back {
     margin-left: 20px;
   }
@@ -77,5 +84,25 @@
   .button_filters,
   .button_back {
     font-size: 22px;
+  }
+
+  .titulo_section_cards{
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section_cards{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;    
+  }
+
+  .passagens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
