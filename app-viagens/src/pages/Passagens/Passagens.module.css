@@ -30,6 +30,12 @@
   border: none;
 }
 
+.section_back :hover, .button_filters:hover {
+  
+ background-color: hsla(0, 0%, 43%, 1);
+  
+}
+
 .section_filters {
   display: flex;
   gap: 10px;
@@ -80,9 +86,13 @@
     margin-left: 20px;
   }
 
+  /* .section_filters span {
+    font-size: 18px;
+  } */
+
   .button_filters,
   .button_back {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .titulo_section_cards {
