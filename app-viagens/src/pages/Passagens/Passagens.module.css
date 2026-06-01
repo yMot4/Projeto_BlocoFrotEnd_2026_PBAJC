@@ -30,6 +30,12 @@
   border: none;
 }
 
+.section_back :hover, .button_filters:hover {
+  
+ background-color: hsla(0, 0%, 43%, 1);
+  
+}
+
 .section_filters {
   display: flex;
   gap: 10px;
