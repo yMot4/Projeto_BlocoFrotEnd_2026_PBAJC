@@ -66,6 +66,18 @@ export default function Passagens() {
     return () => controller.abort();
   }, [prefetched, origem, destino, dataIda, dataVolta, adultos, criancas]);
 
+  const calcularMedia = (lista) => {
+    if (!lista.length) return 0;
+    const soma = lista.reduce((acc, item) => acc + Number(item.valor), 0);
+    return soma / lista.length;
+  };
+
+  //filtrar por valores abaixo ou igual ao preço médio
+  const filtrarPorMedia = () => {
+    const media = calcularMedia(dados);
+    setDados((prev) => prev.filter((item) => Number(item.valor) <= media));
+  };
+
   return (
     <div className={style.tela}>
       <div className={style.container}>
@@ -79,14 +91,21 @@ export default function Passagens() {
           </Button>
         </div>
         <div className={style.section_filters}>
-          <div className={style.button_filters}>
+          <Button
+            className={style.button_filters}
+            onClick={() => {
+              setDados((prev) =>
+                [...prev].sort((a, b) => Number(b.valor) - Number(a.valor)),
+              );
+            }}
+          >
             <ArrowDownUp />
-            <span>Ordenar</span>
-          </div>
-          <div className={style.button_filters}>
+            <span>Ordenar pelo maior valor</span>
+          </Button>
+          <Button className={style.button_filters} onClick={filtrarPorMedia}>
             <MenuFilter />
-            <span>Filtrar</span>
-          </div>
+            <span>Filtrar inferior preço médio</span>
+          </Button>
         </div>
         <div className={style.passagens}>
           <div className={style.titulo_section_cards}>
