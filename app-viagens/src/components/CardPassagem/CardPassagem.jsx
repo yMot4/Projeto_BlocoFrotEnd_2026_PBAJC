@@ -16,6 +16,8 @@ export default function CardPassagem({
     aeroChegadaVolta,
     dataChegadaVolta,
     paradas,
+    adultos,
+    criancas,
     valor,
   },
 }) {
@@ -111,7 +113,8 @@ export default function CardPassagem({
             </span>
           </div>
           <div className={styleCardPass.div_valor}>
-            <span style={{ display: "inline", width: "auto" }}>R${valor}</span>
+            <span style={{ display: "inline", width: "auto" }}>R${valor}</span> 
+            {/* <span style={{ display: "inline", width: "auto" }}>R${(parseInt(adultos) + parseInt(criancas)) * parseFloat(valor)}</span>  */}
           </div>
         </section>
       </div>

@@ -80,9 +80,13 @@
     margin-left: 20px;
   }
 
+  /* .section_filters span {
+    font-size: 18px;
+  } */
+
   .button_filters,
   .button_back {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .titulo_section_cards {
