@@ -1,0 +1,114 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  cursor: text;
+  transition: background 0.15s ease;
+}
+
+.row:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.row:focus-within {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.icon {
+  color: rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  caret-color: #a3e635;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #2d5a2d;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease,
+    opacity 0.15s ease;
+  margin-top: 6px;
+}
+
+.button:hover:not(:disabled) {
+  background: #1f3d20;
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  background: #3a3a3a;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.buttonLoading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorMessage {
+  margin: 8px 6px 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #ffb4b4;
+  background: rgba(220, 80, 80, 0.18);
+  border: 1px solid rgba(220, 80, 80, 0.35);
+  border-radius: 10px;
+  text-align: center;
+}
