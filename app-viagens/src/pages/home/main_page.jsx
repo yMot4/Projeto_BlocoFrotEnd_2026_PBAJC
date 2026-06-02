@@ -1,7 +1,6 @@
 import "./main_page.css"
-import Card from "../../components/Card/Card.jsx"
 import SearchForm from "../../components/SearchForm/SearchForm.jsx"
-import CarrocelSlide from "../../components/Carroceis/CarrocelSlide/CarrocelSlide.jsx"
+import CarrosselSlide from "../../components/Carrosseis/CarrosselSlide/CarrosselSlide.jsx"
 
 function Home() {
     return (
@@ -10,7 +9,7 @@ function Home() {
                 <div className="foto_background"></div>
                 <SearchForm />
                 <div className="painel_verde">
-                    <CarrocelSlide titulo="titulo" maxItens='10' />
+                    <CarrosselSlide titulo="titulo" maxItens='10' />
                 </div>
             </div>
         </>
