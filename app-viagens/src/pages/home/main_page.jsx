@@ -1,9 +1,8 @@
 import "./main_page.css"
-import Card from "../../components/Card/Card.jsx"
 import SearchForm from "../../components/SearchForm/SearchForm.jsx"
-import CarrocelSlide from "../../components/Carroceis/CarrocelSlide/CarrocelSlide.jsx"
 import ApiStatus from "../../components/ApiStatus/ApiStatus.jsx"
 import UserBadge from "../../components/UserBadge/UserBadge.jsx"
+import CarrosselSlide from "../../components/Carrosseis/CarrosselSlide/CarrosselSlide.jsx"
 
 function Home() {
     return (
@@ -14,7 +13,7 @@ function Home() {
                 <UserBadge />
                 <SearchForm />
                 <div className="painel_verde">
-                    <CarrocelSlide titulo="titulo" maxItens='10' />
+                    <CarrosselSlide titulo="titulo" maxItens='10' />
                 </div>
             </div>
         </>

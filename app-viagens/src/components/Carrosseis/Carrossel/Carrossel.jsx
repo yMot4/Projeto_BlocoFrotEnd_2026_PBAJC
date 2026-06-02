@@ -5,9 +5,9 @@ import { useRef } from "react";
 const criarArray = (tamanho) => Array.from({ length: tamanho });
 
 
-function Carrocel({ itens }) {
-    const carrocelRef = useRef(null);
-    const velocidadeCarrocel = 200;
+function Carrossel({ itens }) {
+    const carrosselRef = useRef(null);
+    const velocidadeCarrossel = 200;
 
     const ultimoToque = useRef(null);
     const frame = useRef(null);
@@ -17,8 +17,8 @@ function Carrocel({ itens }) {
 
     const cards = criarArray(itens).map((_, i) => <Card key={i} />);
 
-    const moverCarrocel = (qtd) => {
-        const el = carrocelRef.current;
+    const moverCarrossel = (qtd) => {
+        const el = carrosselRef.current;
         if (!el) return;
         el.scrollLeft = el.scrollLeft + qtd;
     };
@@ -34,7 +34,7 @@ function Carrocel({ itens }) {
                 const esseToque = e.touches[0].screenX;
                 if (ultimoToque.current !== null) {
                     const diferencaDeToque = ultimoToque.current - esseToque;
-                    moverCarrocel(diferencaDeToque);
+                    moverCarrossel(diferencaDeToque);
                 }
                 ultimoToque.current = esseToque;
                 frame.current = null;
@@ -69,7 +69,7 @@ function Carrocel({ itens }) {
                 const esseToque = e.pageX;
                 if (ultimoToque.current !== null) {
                     const diferencaDeToque = ultimoToque.current - esseToque;
-                    moverCarrocel(diferencaDeToque);
+                    moverCarrossel(diferencaDeToque);
                 }
                 ultimoToque.current = esseToque;
                 frame.current = null;
@@ -99,7 +99,7 @@ function Carrocel({ itens }) {
             {/* BOTÃO ESQUERDA */}
             <div
                 style={{ height: '100%', width: '100px', backgroundColor: 'gray', cursor: 'pointer', flexShrink: 0 }}
-                onClick={() => { moverCarrocel(-velocidadeCarrocel) }}
+                onClick={() => { moverCarrossel(-velocidadeCarrossel) }}
             />
 
             {/* WRAPPER DO CARROSSEL (O "TRILHO") */}
@@ -109,7 +109,7 @@ function Carrocel({ itens }) {
                 overflow: "hidden" // Esconde o que sai pelas laterais
             }}>
                 <div
-                    ref={carrocelRef}
+                    ref={carrosselRef}
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
@@ -134,12 +134,12 @@ function Carrocel({ itens }) {
             </div>
             <div
                 style={{ height: '100%', width: '100px', backgroundColor: 'gray', cursor: 'pointer', flexShrink: 0 }}
-                onClick={() => { moverCarrocel(velocidadeCarrocel) }}
+                onClick={() => { moverCarrossel(velocidadeCarrossel) }}
             />
         </div>
     );
 }
-export default Carrocel;
+export default Carrossel;
 
 function Card() {
     return (

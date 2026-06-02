@@ -2,20 +2,15 @@ import stylesCard from "./Card.module.css";
 import {Directions, Car, Building, Star} from '@boxicons/react';
 
 export default function Card({
-  idCarrocel,
+  idCarrossel,
   numeroCard,
-  imagem,
   titulo,
-  iconePredio,
   subtitulo,
-  iconeEstrela,
   pontuacao,
   iconeAdicionar,
-  iconeCar,
-  iconePlaca,
   valor,
 }) {
-const idDoCard = `carrocel-${idCarrocel}-card-${numeroCard}`;
+const idDoCard = `carrossel-${idCarrossel}-card-${numeroCard}`;
 
   return (
     <div id={idDoCard} className={stylesCard.card_container}>

@@ -1,4 +1,4 @@
-.carrocelContainer {
+.carrosselContainer {
     height: auto;
     width: 100%;
     display: flex;
@@ -6,12 +6,12 @@
     align-items: center;
 }
 
-.carrocelTitle {
+.carrosselTitle {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.carrocelContent {
+.carrosselContent {
     height: auto;
     min-height: 134px;
     width: 450px;
@@ -47,6 +47,13 @@
     scrollbar-width: none;
     padding-left: calc(50% - 171px);
     padding-right: calc(50% - 171px);
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y pinch-zoom;
+}
+
+.vitrini:active {
+    cursor: grabbing;
 }
 
 .vitrini::-webkit-scrollbar {
@@ -56,4 +63,9 @@
 .snapItem {
     scroll-snap-align: center;
     flex-shrink: 0;
+}
+
+.snapItem img {
+    pointer-events: none;
+    user-select: none;
 }
