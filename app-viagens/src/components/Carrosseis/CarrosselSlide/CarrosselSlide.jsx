@@ -18,6 +18,7 @@ export default function CarrosselSlide({ titulo, velocidadeCarrossel = 200, maxI
     
     const [data, setData] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isDesktop, setIsDesktop] = useState(false);
     const vitriniRef = useRef(null);
     const activeIndexRef = useRef(0);
     const timerRef = useRef(null);
@@ -26,6 +27,17 @@ export default function CarrosselSlide({ titulo, velocidadeCarrossel = 200, maxI
     const frameRef = useRef(null);
     const isDraggingRef = useRef(false);
     const arrastouRef = useRef(false);
+    const itensPorPagina = isDesktop ? 3 : 1;
+
+    useEffect(() => {
+        const media = window.matchMedia("(min-width: 768px)");
+        const atualizar = () => setIsDesktop(media.matches);
+
+        atualizar();
+        media.addEventListener("change", atualizar);
+
+        return () => media.removeEventListener("change", atualizar);
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -46,7 +58,10 @@ const agendarProximoSlide = useCallback((delay) => {
 
         timerRef.current = setTimeout(() => {
             if (data.length > 0) {
-                const proxIndex = (activeIndexRef.current + 1) % data.length;
+                // const proxIndex = (activeIndexRef.current + 1) % data.length;
+                const totalPaginas = Math.ceil(data.length / itensPorPagina);
+                const paginaAtual = Math.floor(activeIndexRef.current / itensPorPagina);
+                const proxIndex = ((paginaAtual + 1) % totalPaginas) * itensPorPagina;
                 const idDoProxCard = `carrossel-${titulo}-card-${proxIndex}`;
                 const elemento = document.getElementById(idDoProxCard);
                 
@@ -62,7 +77,7 @@ const agendarProximoSlide = useCallback((delay) => {
             }
             agendarProximoSlide(TempoAutoSlide);
         }, delay);
-    }, [data.length, titulo]);
+    }, [data.length, itensPorPagina, titulo]);
 
     useEffect(() => {
         if (data.length > 0) {
@@ -176,16 +191,30 @@ useEffect(() => {
         if (!vitriniRef.current) return;
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const index = Number(entry.target.getAttribute('data-index'));
-                    setActiveIndex(index);
-                    activeIndexRef.current = index; 
-                }
-            });
+            // entries.forEach(entry => {
+            //     if (entry.isIntersecting) {
+            //         const index = Number(entry.target.getAttribute('data-index'));
+            //         setActiveIndex(index);
+            //         activeIndexRef.current = index; 
+            //     }
+            // });
+            const maisVisivel = entries
+                .filter((entry) => entry.isIntersecting)
+                .map((entry) => ({
+                    index: Number(entry.target.getAttribute('data-index')),
+                    ratio: entry.intersectionRatio,
+                }))
+                .reduce((maior, atual) => (
+                    !maior || atual.ratio > maior.ratio ? atual : maior
+                ), null);
+
+            if (maisVisivel) {
+                setActiveIndex(maisVisivel.index);
+                activeIndexRef.current = maisVisivel.index; 
+            }
         }, {
             root: vitriniRef.current,
-            threshold: 0.5 
+            threshold: [0.5, 0.75, 1] 
         });
 
         const items = vitriniRef.current.children;
@@ -193,6 +222,9 @@ useEffect(() => {
 
         return () => observer.disconnect();
     }, [data]);
+
+    const totalBolinhas = Math.ceil(data.length / itensPorPagina);
+    const paginaAtiva = Math.floor(activeIndex / itensPorPagina);
 
     const cards = criarArray(data.length).map((_, i) => (
         <div key={i} className={stylesContainer.snapItem} data-index={i}>
@@ -208,12 +240,12 @@ useEffect(() => {
         </div>
     ));
 
-    const botoes = criarArray(data.length).map((_, i) => (
+    const botoes = criarArray(totalBolinhas).map((_, i) => (
         <BotaoSlide 
             key={i} 
             idCarrossel={titulo}
-            numeroCard={i} 
-            isActive={i === activeIndex}
+            numeroCard={i * itensPorPagina} 
+            isActive={i === paginaAtiva}
             onInteraction={handleUserInteraction} 
         />
     ));
