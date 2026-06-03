@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "@boxicons/react";
 import styles from "./UserBadge.module.css";
-import { clearAuth, loadAuth } from "../../services/authClient";
+import { loadAuth } from "../../services/authClient";
 
 function initialsFrom(auth) {
   const name = auth?.displayName?.trim();
@@ -23,49 +22,27 @@ function initialsFrom(auth) {
 
 export default function UserBadge() {
   const navigate = useNavigate();
-  const [auth, setAuth] = useState(() => loadAuth());
-  const [open, setOpen] = useState(false);
-  const wrapperRef = useRef(null);
-
-  // Click-outside dismisses the menu — matches the dropdown pattern in SearchForm.
-  useEffect(() => {
-    if (!open) return;
-    const onDocClick = (e) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", onDocClick);
-    return () => document.removeEventListener("mousedown", onDocClick);
-  }, [open]);
+  const auth = loadAuth();
 
   const handleClick = () => {
     if (!auth) {
       navigate("/auth");
       return;
     }
-    setOpen((v) => !v);
-  };
-
-  const handleLogout = () => {
-    clearAuth();
-    setAuth(null);
-    setOpen(false);
+    navigate("/perfil");
   };
 
   const initials = initialsFrom(auth);
   const label = auth
-    ? `Conta de ${auth.displayName ?? auth.email}`
+    ? `Ver perfil de ${auth.displayName ?? auth.email}`
     : "Entrar";
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef}>
+    <div className={styles.wrapper}>
       <button
         type="button"
         className={styles.badge}
         aria-label={label}
-        aria-haspopup={auth ? "menu" : undefined}
-        aria-expanded={auth ? open : undefined}
         onClick={handleClick}
       >
         {auth && initials ? (
@@ -74,19 +51,6 @@ export default function UserBadge() {
           <User className={styles.icon} aria-hidden="true" />
         )}
       </button>
-
-      {auth && open && (
-        <div className={styles.menu} role="menu">
-          <button
-            type="button"
-            role="menuitem"
-            className={styles.menuItem}
-            onClick={handleLogout}
-          >
-            Sair
-          </button>
-        </div>
-      )}
     </div>
   );
 }
