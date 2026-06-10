@@ -1,0 +1,102 @@
+.carrosselContainer {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrosselTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.carrosselContent {
+    height: auto;
+    min-height: 134px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    border-radius: 32px;
+}
+
+.botaoProximo {
+    height: auto;
+    width: 100px;
+    background-color: gray;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.containerHolder {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.vitrini {
+    display: flex;
+    align-items: center;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 30px; 
+    width: 100%;
+    height: 100%;
+    padding: 0 20px; 
+    scrollbar-width: none;
+    padding-left: calc(50% - 171px);
+    padding-right: calc(50% - 171px);
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y pinch-zoom;
+}
+
+.vitrini:active {
+    cursor: grabbing;
+}
+
+.vitrini::-webkit-scrollbar {
+    display: none; 
+}
+
+.snapItem {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+}
+
+.snapItem img {
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+ 
+    .carrosselContainer {
+        width: min(100%, 1112px);
+        max-width: none;
+        margin: 0 auto;
+        padding-top: 60px;
+    }
+ 
+    .carrosselTitle {
+        font-size: 26px;
+        align-self: flex-start;
+        padding-left: 10px;
+    }
+ 
+    .carrosselContent {
+        width: 100%;
+        overflow: hidden;
+    }
+ 
+    .vitrini {
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 30px;
+    }
+ 
+    .snapItem {
+        scroll-snap-align: start;
+    }
+}
