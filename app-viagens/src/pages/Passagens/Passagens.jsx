@@ -17,6 +17,8 @@ export default function Passagens() {
   const [loading, setLoading] = useState(!prefetched);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  //para alternar ordenação das passagens segundo seu valor
+  const [ordemDesc, setOrdemDesc] = useState(false); // alterna direção que inicia c/ valores ascendente
 
   const params = new URLSearchParams(location.search);
   const origem = params.get("origem");
@@ -66,6 +68,18 @@ export default function Passagens() {
     return () => controller.abort();
   }, [prefetched, origem, destino, dataIda, dataVolta, adultos, criancas]);
 
+  const ordenarCards = () => {
+    setDados((prev) =>
+      [...prev].sort(
+        (a, b) =>
+          ordemDesc
+            ? Number(a.valor) - Number(b.valor) // menor p/ maior
+            : Number(b.valor) - Number(a.valor), // maior p/ menor
+      ),
+    );
+    setOrdemDesc(!ordemDesc); // alterna entre ascendente e descendente
+  };
+
   const calcularMedia = (lista) => {
     if (!lista.length) return 0;
     const soma = lista.reduce((acc, item) => acc + Number(item.valor), 0);
@@ -91,16 +105,13 @@ export default function Passagens() {
           </Button>
         </div>
         <div className={style.section_filters}>
-          <Button
-            className={style.button_filters}
-            onClick={() => {
-              setDados((prev) =>
-                [...prev].sort((a, b) => Number(b.valor) - Number(a.valor)),
-              );
-            }}
-          >
+          <Button className={style.button_filters} onClick={ordenarCards}>
             <ArrowDownUp />
-            <span>Ordenar pelo maior valor</span>
+            <span>
+              {ordemDesc
+                ? "Ordenar pelo menor valor"
+                : "Ordenar pelo maior valor"}
+            </span>
           </Button>
           <Button className={style.button_filters} onClick={filtrarPorMedia}>
             <MenuFilter />
