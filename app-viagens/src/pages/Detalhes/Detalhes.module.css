@@ -1,44 +1,46 @@
 .tela {
-    height: 852px;
-    width: 393px;
+    min-height: 100dvh;
+    width: 100%; 
     padding-bottom: 20px;
     background-image: url("https://images.unsplash.com/photo-1521292270410-a8c4d716d518?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWxwZXMlMjBzdSVDMyVBRCVDMyVBN29zfGVufDB8fDB8fHww");
     background-size: cover;
-    overflow: hidden;
-    overflow: hidden;
+    background-position: center;
+    overflow-x: hidden;
     overflow-y: auto;
     display: flex;
+    justify-content: center;
     font-family: sans-serif;
 }
 
 .container {
-  height: fit-content;
-  width: 100%;
-  margin-top: 55px;
-  box-sizing: border-box;
-  padding-left: 20px;
-  padding-right: 20px;
+    height: fit-content;
+    width: 100%;
+    max-width: 600px;
+    margin-top: clamp(30px, 6vh, 55px);
+    box-sizing: border-box;
+    padding-left: clamp(15px, 4vw, 20px);
+    padding-right: clamp(15px, 4vw, 20px);
 }
 
 .button_back {
-  height: 45px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: hsla(0, 0%, 43%, 0.65);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 45px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 43%, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button_back a {
-  text-decoration: none;
-  color: white;
-  padding: 0;
+    text-decoration: none;
+    color: white;
+    padding: 0;
 }
 
 header {
     font-weight: bold;
-    font-size: 25px;
+    font-size: clamp(18px, 5vw, 25px);
 }
 
 .container_detalhes {
@@ -52,14 +54,12 @@ header {
 
 .box_padding {
     box-sizing: border-box;
-    padding: 20px;
+    padding: clamp(15px, 4vw, 20px);
 }
 
 .box_passagem {
     height: fit-content;
     width: 100%;
-    /* background-color: rgb(245, 178, 178); */
-
     margin-top: 5px;
 }
 
@@ -67,7 +67,6 @@ header {
     font-size: medium;
     margin-top: 20px;
 }
-
 
 .passagem_localidade span {
     margin-left: 45px;
@@ -103,11 +102,11 @@ header {
 .section_opcionais {
     height: fit-content;
     width: 100%;
-    /* background-color: #2C3E2F; */
 }
 
 .select_carro {
-   font-size: large;
+    font-size: large;
+    max-width: 100%;
 }
 
 .container_carros {
@@ -125,25 +124,25 @@ header {
     display: flex;
     align-items: center;
     font-size: 12px;
-
 }
 
 .foto_carro {
     height: 100%;
     width: 100%;
-    /* background-color: #2C3E2F; */
     background-image: url("https://noticias.r7.com/resizer/95EiotSP2AODeV3prBk_5Qamii0=/arc-photo-newr7/arc2-prod/public/NYNE7CDULFBELGQ65RNTBXADBA.png");
     background-size: cover;
     background-position: center;
 }
 
 .carro_section_valor {
-    height: 40px;
-    /* background-color: #2C3E2F; */
+    min-height: 40px;
     border-top: 2px solid rgb(228, 228, 228);
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px 0;
 }
 
 .contador_gap {
@@ -179,20 +178,21 @@ header {
 }
 
 .section_confirmar {
-    height: 60px;
+    min-height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     border-radius: 0 0 8px 8px;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 15px 20px;
     border-top: 2px solid rgb(228, 228, 228);
-
 }
 
 .section_confirmar span {
     font-weight: bold;
-    font-size: 20px;
+    font-size: clamp(16px, 4vw, 20px);
     flex-grow: 1;
 }
 
