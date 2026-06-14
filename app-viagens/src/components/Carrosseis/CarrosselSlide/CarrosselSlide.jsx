@@ -42,17 +42,10 @@ export default function CarrosselSlide({ titulo, velocidadeCarrossel = 200, maxI
     useEffect(() => {
         const fetchData = async () => {
             try {
-<<<<<<< HEAD
                 const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${maxItens}`);
                 if (!response.ok) throw new Error(`HTTP error: Status ${response.status}`);
                 const result = await response.json();
                 setData(result);
-=======
-                const response = await fetch(`/assets/mock/mockInicial/dadosIniciais.json`);
-                if (!response.ok) throw new Error(`HTTP error: Status ${response.status}`);
-                const result = await response.json();
-                setData(result.data.slice(0, maxItens));
->>>>>>> origin/main
             } catch (err) {
                 console.error(err);
             }
@@ -65,10 +58,7 @@ const agendarProximoSlide = useCallback((delay) => {
 
         timerRef.current = setTimeout(() => {
             if (data.length > 0) {
-<<<<<<< HEAD
                 // const proxIndex = (activeIndexRef.current + 1) % data.length;
-=======
->>>>>>> origin/main
                 const totalPaginas = Math.ceil(data.length / itensPorPagina);
                 const paginaAtual = Math.floor(activeIndexRef.current / itensPorPagina);
                 const proxIndex = ((paginaAtual + 1) % totalPaginas) * itensPorPagina;
@@ -201,7 +191,6 @@ useEffect(() => {
         if (!vitriniRef.current) return;
 
         const observer = new IntersectionObserver((entries) => {
-<<<<<<< HEAD
             // entries.forEach(entry => {
             //     if (entry.isIntersecting) {
             //         const index = Number(entry.target.getAttribute('data-index'));
@@ -210,9 +199,6 @@ useEffect(() => {
             //     }
             // });
             const maisVisivel = entries
-=======
-             const maisVisivel = entries
->>>>>>> origin/main
                 .filter((entry) => entry.isIntersecting)
                 .map((entry) => ({
                     index: Number(entry.target.getAttribute('data-index')),
@@ -245,20 +231,11 @@ useEffect(() => {
             <Card
                 idCarrossel={titulo}
                 numeroCard={i}
-<<<<<<< HEAD
                 titulo="Munique, Alemanha"
                 subtitulo="Munich Marriott Hotel"
                 pontuacao={4.8}
                 iconeAdicionar="/icone-plus.png"
                 valor="R$2.458"
-=======
-                titulo={data[i]?.titulo}
-                subtitulo={data[i]?.descricao.slice(0, 60) + '...'}
-                pontuacao={data[i]?.pontuacao}
-                iconeAdicionar={data[i]?.iconeAdicionar}
-                valor={data[i]?.valor}
-                imgemSrc={data[i]?.imgemSrc}
->>>>>>> origin/main
             />
         </div>
     ));
