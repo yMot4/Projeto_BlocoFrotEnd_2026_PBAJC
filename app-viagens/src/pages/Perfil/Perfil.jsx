@@ -56,7 +56,8 @@ export default function Perfil() {
   const navigate = useNavigate();
   const auth = loadAuth();
   const [pacotes, setPacotes] = useState(() => {
-    const salvo = localStorage.getItem("pacotes");
+    const chave = auth ? `pacotes_${auth.email}` : "pacotes_guest";
+    const salvo = localStorage.getItem(chave);
     return salvo ? JSON.parse(salvo) : [];
   });
   const nomeUsuario = auth?.displayName || "Usuario viajante";
@@ -72,12 +73,13 @@ export default function Perfil() {
   );
 
   const handleCancelar = (id) => {
+    const chave = auth ? `pacotes_${auth.email}` : "pacotes_guest";
     setPacotes((atuais) => {
-      const atualizados = atuais.map((p) =>
-        p.id === id ? { ...p, status: "Cancelado" } : p
-      );
-      localStorage.setItem("pacotes", JSON.stringify(atualizados));
-      return atualizados;
+        const atualizados = atuais.map((p) =>
+            p.id === id ? { ...p, status: "Cancelado" } : p
+        );
+        localStorage.setItem(chave, JSON.stringify(atualizados));
+        return atualizados;
     });
   };
 

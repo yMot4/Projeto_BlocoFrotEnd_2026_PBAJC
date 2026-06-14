@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Envelope, Lock, User } from "@boxicons/react";
 import styles from "./AuthForm.module.css";
-import { login, register } from "../../services/authClient";
+import { login, register, resgatarPacotePendente } from "../../services/authClient";
 
 export default function AuthForm({ mode, onSuccess }) {
   const [email, setEmail] = useState("");
@@ -34,6 +34,7 @@ export default function AuthForm({ mode, onSuccess }) {
       const auth = isRegister
         ? await register({ email, password, displayName: displayName.trim() })
         : await login({ email, password });
+        resgatarPacotePendente(auth.email); 
       onSuccess?.(auth);
     } catch (err) {
       setError(err.message || "Não foi possível concluir. Tente novamente.");

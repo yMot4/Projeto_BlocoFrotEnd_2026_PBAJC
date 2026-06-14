@@ -50,3 +50,13 @@ export function loadAuth() {
 export function clearAuth() {
   sessionStorage.removeItem(STORAGE_KEY);
 }
+
+export function resgatarPacotePendente(email) {
+    const pendente = localStorage.getItem("pacote_pendente");
+    if (!pendente) return;
+
+    const chave = `pacotes_${email}`;
+    const existentes = JSON.parse(localStorage.getItem(chave) || "[]");
+    localStorage.setItem(chave, JSON.stringify([...existentes, JSON.parse(pendente)]));
+    localStorage.removeItem("pacote_pendente");
+}
