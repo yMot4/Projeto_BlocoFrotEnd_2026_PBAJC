@@ -8,7 +8,7 @@ import {
   Group,
   User,
 } from "@boxicons/react";
-import { loadAuth } from "../../services/authClient";
+import { loadAuth, clearAuth } from "../../services/authClient";
 import styles from "./Perfil.module.css";
 
 const pacotesComprados = [
@@ -109,6 +109,11 @@ export default function Perfil() {
     );
   };
 
+  const handleLogout = () => {
+    clearAuth();
+    navigate("/");
+  };
+
   return (
     <main className={styles.tela}>
       <section className={styles.hero}>
@@ -119,6 +124,15 @@ export default function Perfil() {
           onClick={() => navigate(-1)}
         >
           <ArrowRightStroke rotate={180} size="md" color="white" />
+        </button>
+
+        <button
+          type="button"
+          className={styles.buttonLogout}
+          aria-label="Sair da conta"
+          onClick={handleLogout}
+        >
+          Sair
         </button>
 
         <div className={styles.userHeader}>
