@@ -20,8 +20,24 @@ export default function Detalhes() {
     const {
         ciaAerea, valor,
         aeroPartidaIda, aeroChegadaIda, dataPartidaIda, horaPartidaIda, dataChegadaIda, horaChegadaIda,
-        aeroPartidaVolta, aeroChegadaVolta, dataPartidaVolta, horaPartidaVolta, dataChegadaVolta, horaChegadaVolta,
+        aeroPartidaVolta, aeroChegadaVolta, dataPartidaVolta, horaPartidaVolta, dataChegadaVolta, horaChegadaVolta, adultos, criancas
     } = item;
+
+    const handleConfirmar = () => {
+        const novoPacote = {
+            id: Date.now(),
+            destino: aeroChegadaIda,
+            dataViagem: dataPartidaIda,
+            viajantes: Number(adultos) + Number(criancas),
+            valor: Number(valor),
+            status: "Confirmado",
+            ciaAerea: ciaAerea,
+            carro: valueCarro,
+        };
+        const existentes = JSON.parse(localStorage.getItem("pacotes") || "[]");
+        localStorage.setItem("pacotes", JSON.stringify([...existentes, novoPacote]));
+        navigate("/perfil");
+    };
 
     const carros = [
         { id: 1, modelo: "Fiat Mobi",       lugares: 5, cambio: "Manual",     quilometragem: "Livre", precoPorDia: 89.9,  foto: null },
@@ -147,7 +163,7 @@ export default function Detalhes() {
                         <span>
                             R$ {valorTotal.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
-                        <button type="button">Confirmar</button>
+                        <button type="button" onClick={handleConfirmar}>Confirmar</button>
                     </div>
                 </div>
             </div>
