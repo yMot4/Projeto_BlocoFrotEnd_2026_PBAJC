@@ -1,0 +1,46 @@
+{
+    "status": "success",
+    "statusCode": 200,
+    "data": [
+        {
+            "id": 1,
+            "titulo": "Munique",
+            "descricao": "Descubra a magia de Munique, onde história e modernidade se encontram. Explore castelos, museus e a vibrante cultura bávara. Uma viagem inesquecível aguarda por você!",
+            "pontuacao": 4.8,
+            "valor": "R$2.458",
+            "imgemSrc": "/assets/mock/mockInicial/mockInicialImagens/Munique.webp"
+        },
+        {
+            "id": 2,
+            "titulo": "Paris",
+            "descricao": "Descubra a magia de Paris, onde história e modernidade se encontram. Explore castelos, museus e a vibrante cultura francesa. Uma viagem inesquecível aguarda por você!",
+            "pontuacao": 4.9,
+            "valor": "R$3.200",
+            "imgemSrc": "/assets/mock/mockInicial/mockInicialImagens/Paris.webp"
+        },
+        {
+            "id": 3,
+            "titulo": "Roma",
+            "descricao": "Descubra a magia de Roma, onde história e modernidade se encontram. Explore castelos, museus e a vibrante cultura italiana. Uma viagem inesquecível aguarda por você!",
+            "pontuacao": 4.7,
+            "valor": "R$2.900",
+            "imgemSrc": "/assets/mock/mockInicial/mockInicialImagens/Roma.webp"
+        },
+        {
+            "id": 4,
+            "titulo": "Londres",
+            "descricao": "Descubra a magia de Londres, onde história e modernidade se encontram. Explore castelos, museus e a vibrante cultura britânica. Uma viagem inesquecível aguarda por você!",
+            "pontuacao": 4.6,
+            "valor": "R$2.750",
+            "imgemSrc": "/assets/mock/mockInicial/mockInicialImagens/Londres.webp"
+        },
+        {
+            "id": 5,
+            "titulo": "Barcelona",
+            "descricao": "Descubra a magia de Barcelona, onde história e modernidade se encontram. Explore castelos, museus e a vibrante cultura espanhola. Uma viagem inesquecível aguarda por você!",
+            "pontuacao": 4.8,
+            "valor": "R$2.600",
+            "imgemSrc": "/assets/mock/mockInicial/mockInicialImagens/Barcelona.webp"
+        }
+    ]
+}
