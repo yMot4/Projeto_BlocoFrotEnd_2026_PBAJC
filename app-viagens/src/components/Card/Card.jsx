@@ -9,6 +9,7 @@ export default function Card({
   pontuacao,
   iconeAdicionar,
   valor,
+  imgemSrc
 }) {
 const idDoCard = `carrossel-${idCarrossel}-card-${numeroCard}`;
 
@@ -16,8 +17,8 @@ const idDoCard = `carrossel-${idCarrossel}-card-${numeroCard}`;
     <div id={idDoCard} className={stylesCard.card_container}>
       <div className={stylesCard.card_image}>
         <img
-          src={"/assets/Munique.webp"}
-          alt="Imagem do destino"
+          src={imgemSrc}
+          alt={titulo}
           className={stylesCard.image}
         />
       </div>
