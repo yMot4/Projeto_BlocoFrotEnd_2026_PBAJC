@@ -3,11 +3,15 @@ import { ArrowRightStroke, PlaneTakeOff, PlaneAlt, PlaneLand, User, SteeringWhee
 import { useState } from "react";
 import Button from "../../components/Button";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { loadAuth } from "../../services/authClient";
+import { aeroportos } from "../../../public/assets/mock/mockInicial/mockAeroportos/aeroportos";
+
 
 export default function Detalhes() {
     const { id } = useParams();
     const location = useLocation();
     const item = location.state;
+    console.log(item);
     const navigate = useNavigate();
 
     const [count, setCount] = useState(1);
@@ -24,9 +28,14 @@ export default function Detalhes() {
     } = item;
 
     const handleConfirmar = () => {
+        console.log("código do aeroporto:", aeroChegadaIda);
+        const info = aeroportos[aeroChegadaIda] || { cidade: aeroChegadaIda, imagem: null };
+        console.log("info encontrada:", info);
+
         const novoPacote = {
             id: Date.now(),
-            destino: aeroChegadaIda,
+            destino: info.cidade,
+            imagem: info.imagem,   
             dataViagem: dataPartidaIda,
             viajantes: Number(adultos) + Number(criancas),
             valor: Number(valor),
@@ -34,11 +43,19 @@ export default function Detalhes() {
             ciaAerea: ciaAerea,
             carro: valueCarro,
         };
-        const existentes = JSON.parse(localStorage.getItem("pacotes") || "[]");
-        localStorage.setItem("pacotes", JSON.stringify([...existentes, novoPacote]));
-        navigate("/perfil");
-    };
 
+        const auth = loadAuth();
+
+        if (auth) {
+            const chave = `pacotes_${auth.email}`;
+            const existentes = JSON.parse(localStorage.getItem(chave) || "[]");
+            localStorage.setItem(chave, JSON.stringify([...existentes, novoPacote]));
+            navigate("/perfil");
+        } else {
+            localStorage.setItem("pacote_pendente", JSON.stringify(novoPacote));
+            navigate("/auth/login", { state: { redirectTo: "/perfil" } }); 
+        }
+    };
     const carros = [
         { id: 1, modelo: "Fiat Mobi",       lugares: 5, cambio: "Manual",     quilometragem: "Livre", precoPorDia: 89.9,  foto: null },
         { id: 2, modelo: "Hyundai HB20",    lugares: 5, cambio: "Automático", quilometragem: "Livre", precoPorDia: 129.9, foto: null },
