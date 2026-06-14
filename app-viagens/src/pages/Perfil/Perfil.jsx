@@ -11,38 +11,6 @@ import {
 import { loadAuth, clearAuth } from "../../services/authClient";
 import styles from "./Perfil.module.css";
 
-const pacotesComprados = [
-  {
-    id: 1,
-    destino: "Munique, Alemanha",
-    hotel: "Munich Marriott Hotel",
-    dataViagem: "2026-08-20",
-    viajantes: 2,
-    valor: 2458,
-    status: "Confirmado",
-    imagem: "/assets/Munique.webp",
-  },
-  {
-    id: 2,
-    destino: "Munique, Alemanha",
-    hotel: "Munich Marriott Hotel",
-    dataViagem: "2026-06-18",
-    viajantes: 1,
-    valor: 2458,
-    status: "Confirmado",
-    imagem: "/assets/Munique.webp",
-  },
-  {
-    id: 3,
-    destino: "Munique, Alemanha",
-    hotel: "Munich Marriott Hotel",
-    dataViagem: "2026-03-12",
-    viajantes: 3,
-    valor: 7374,
-    status: "Finalizado",
-    imagem: "/assets/Munique.webp",
-  },
-];
 
 function formatarData(dataIso) {
   const data = new Date(`${dataIso}T00:00:00`);
@@ -87,8 +55,10 @@ function iniciaisDoUsuario(auth) {
 export default function Perfil() {
   const navigate = useNavigate();
   const auth = loadAuth();
-  const [pacotes, setPacotes] = useState(pacotesComprados);
-
+  const [pacotes, setPacotes] = useState(() => {
+    const salvo = localStorage.getItem("pacotes");
+    return salvo ? JSON.parse(salvo) : [];
+  });
   const nomeUsuario = auth?.displayName || "Usuario viajante";
   const emailUsuario = auth?.email || "email nao informado";
   const iniciais = iniciaisDoUsuario(auth);
@@ -102,11 +72,13 @@ export default function Perfil() {
   );
 
   const handleCancelar = (id) => {
-    setPacotes((atuais) =>
-      atuais.map((pacote) =>
-        pacote.id === id ? { ...pacote, status: "Cancelado" } : pacote,
-      ),
-    );
+    setPacotes((atuais) => {
+      const atualizados = atuais.map((p) =>
+        p.id === id ? { ...p, status: "Cancelado" } : p
+      );
+      localStorage.setItem("pacotes", JSON.stringify(atualizados));
+      return atualizados;
+    });
   };
 
   const handleLogout = () => {
